@@ -27,7 +27,6 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 from moviepy import ImageClip, AudioFileClip, CompositeVideoClip, TextClip, concatenate_videoclips
-from moviepy.video.fx.resize import resize
 
 
 def vprint(flag: bool, *msg):
@@ -58,13 +57,13 @@ def build_segment(slide_path: Path, text: str, audio_path: Path, duration: float
 
     W, H = size
     try:
-        base = resize(ImageClip(str(slide_path), duration=duration), width=W, height=H)
+        base = ImageClip(str(slide_path), duration=duration).resized(new_size=(W, H))
     except Exception as e:
         raise SystemExit(f"Failed to open slide image: {slide_path} ({e})")
 
     try:
         audio = AudioFileClip(str(audio_path))
-        base = base.set_audio(audio)
+        base = base.with_audio(audio)
     except Exception as e:
         raise SystemExit(f"Failed to open audio: {audio_path} ({e})")
 
@@ -80,13 +79,13 @@ def build_segment(slide_path: Path, text: str, audio_path: Path, duration: float
             method="caption",
             size=(int(W*0.9), None),
             align="South",
-        ).set_position(("center", H - margin - subtitle_h(fontsize)))
+        ).with_position(("center", H - margin - subtitle_h(fontsize)))
         clip = CompositeVideoClip([base, subtitle], size=(W, H))
     except Exception as e:
         vprint(verbose, f"Failed to render subtitles with TextClip (ImageMagick missing?). Continuing without subtitles. Detail: {e}")
         clip = base
 
-    return clip.set_duration(duration)
+    return clip.with_duration(duration)
 
 
 def subtitle_h(fontsize: int) -> int:
