@@ -1,5 +1,10 @@
 I'm Virtual Math Helper, What can I help you?
 
+FEATURES
+- AI 버튜버 인강 강사이다.
+- 수연도우미처럼 유튜브 영상으로 개념 설명 및 단원별 문제를 풀이한다.
+- 문제 사진을 올렸을 때 해당 문제를 설명하는 영상을 출력한다.
+
 TODOS
 
 - [X] 수학 예시 문제를 curating한 후에 pdf/image/latex 의 이해도 정도를 비교한다.

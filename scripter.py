@@ -67,6 +67,9 @@ try:
 except Exception:
   OpenAI = None  # type: ignore
 
+SCHEMA_VERSION = "slideplan.v1"
+ALLOWED_GESTURES = ["point","emphasize","small-nod","smile","pause","write","think"]
+
 VERBOSE = False
 def _log(msg: str) -> None:
   if VERBOSE:
@@ -124,22 +127,58 @@ def _emit_manim_blocks(plan: dict, outdir: str) -> List[str]:
       paths.append(fn)
   return paths
 
+def _estimate_target_seconds(solution_markdown: str, min_s: int, max_s: int, per_1k: int) -> int:
+  text = (solution_markdown or "").strip()
+  n = max(1, len(text))
+  est = int((n / 1000.0) * per_1k)
+  return max(min_s, min(max_s, est))
+
 def _build_prompt(chapter: str, problems: Dict[str, dict]) -> List[dict]:
   """
   Build a single combined prompt to convert per-problem solutions into a slide-centric plan.
   STRICT JSON schema required (see module docstring). Narration is attached to each slide.
   """
   sys_text = (
-    "You are a lecture scriptwriter for an educational VTuber. Convert formal math solutions into a slide-centric "
+    "You are a lecture scriptwriter for an educational VTuber. Convert formal math solutions into a SLIDE‑CENTRIC "
     "lecture plan in Korean (존댓말) where each slide bundles: (1) MARP Markdown for the slide, "
-    "(2) narration lines with gestures spoken while the slide is on screen, and (3) optional Manim blocks to overlay. "
-    "Output STRICT JSON only, matching the schema in the instructions. No extra commentary, no Markdown, no code fences.\n\n"
-    "Gesture tags (fixed set): ['point','emphasize','small-nod','smile','pause','write','think']\n\n"
+    "(2) narration lines with gestures spoken while the slide is on screen, and (3) optional Manim blocks to overlay.\n"
+    "OUTPUT STRICT JSON ONLY (no code fences, no markdown outside strings), escaped properly.\n\n"
+    "Return JSON that matches this schema EXACTLY:\n"
+    "{\n"
+    f"  \"schema_version\": \"{SCHEMA_VERSION}\",\n"
+    "  \"chapter\": string,\n"
+    "  \"slides\": [\n"
+    "    {\n"
+    "      \"id\": string,                              // e.g., \"intro-1\", \"p5-1\", \"p5-2\", \"outro-1\"\n"
+    "      \"problem\": string|null,                    // e.g., \"1.2-5\" or null for intro/outro\n"
+    "      \"role\": \"statement\"|\"derivation\"|\"result\"|\"review\"|\"ref\"|null,\n"
+    "      \"marp_md\": string,                         // FULL MARP slide markdown; MUST start with \"---\\n\"\n"
+    "      \"narration\": [                             // spoken while THIS slide is visible\n"
+    "        { \"text\": string, \"gestures\": [string], \"duration_sec\": number OPTIONAL }\n"
+    "      ],\n"
+    "      \"manim\": [                                 // optional overlay clips rendered during THIS slide\n"
+    "        {\n"
+    "          \"id\": string,\n"
+    "          \"description\": string,\n"
+    "          \"code\": string,                        // minimal runnable Manim stub; escape backslashes\n"
+    "          \"overlay\": {                           // where/how to place the rendered video on top of the slide\n"
+    "            \"position\": \"top-left\"|\"top-right\"|\"bottom-left\"|\"bottom-right\",\n"
+    "            \"width\": string,                     // e.g., \"40%\"\n"
+    "            \"start_at_sec\": number OPTIONAL\n"
+    "          }\n"
+    "        }\n"
+    "      ]\n"
+    "    }\n"
+    "  ]\n"
+    "}\n\n"
     "Rules:\n"
+    f"- Gesture tags must be chosen only from: {ALLOWED_GESTURES}.\n"
     "- Use multiple equations per slide when needed to show step transitions; do NOT split every equation into a new slide.\n"
-    "- Provide 2–4 slides per problem: statement → key derivations → final answer (with LaTeX \\boxed{...}).\n"
-    "- For Manim blocks, include minimal runnable stubs and use MathTex to render any important formulas so equations are visible on screen.\n"
-    "- Keep narration concise, natural Korean, referencing what is on the slide (avoid essay tone)."
+    "- Provide 2–4 slides per problem: statement → key derivations → final answer (with LaTeX \\\\boxed{...}).\n"
+    "- For Manim blocks, use MathTex to render important formulas so equations are visible on screen even if graphics are shown.\n"
+    "- Keep narration concise, natural Korean, referencing what is on the slide (avoid essay tone).\n"
+    "- Always include a final ANSWER slide per problem with key result highlighted.\n"
+    "- Escape ALL backslashes in LaTeX (e.g., \\\\frac, \\\\boxed) and newlines as \\\\n inside JSON strings."
   )
 
   # Flatten problems as text blocks (to inform the model).
@@ -159,6 +198,44 @@ def _build_prompt(chapter: str, problems: Dict[str, dict]) -> List[dict]:
     {"role": "system", "content": [{"type": "text", "text": sys_text}]},
     {"role": "user", "content": [{"type": "text", "text": user_text}]},
   ]
+
+def _build_prompt_for_problem(chapter: str, prob_key: str, meta: dict, target_seconds: int) -> List[dict]:
+  sol = (meta.get("solution_markdown","") or "").strip()
+  sys_text = (
+    "You are a lecture scriptwriter for an educational VTuber. Produce a SLIDE‑CENTRIC plan in Korean (존댓말) "
+    "for ONE problem only, bundling per slide: MARP Markdown, narration (with gestures), and optional Manim blocks.\n"
+    "OUTPUT STRICT JSON ONLY (no code fences), escaped properly. Follow EXACT schema and constraints from previous instructions.\n"
+    f"Target total narration time for this problem: ~{target_seconds} seconds. "
+    "Prefer 2–6 slides depending on complexity; allow more if necessary to meet clarity and time."
+  )
+  user_text = (
+    f"Chapter {chapter}, Problem {prob_key}. Here is the solved solution text:\n\n{sol}\n\n"
+    "Return ONLY the JSON object with `schema_version`, `chapter`, and `slides` for this problem. "
+    "Each slide's narration lines may include optional `duration_sec` to help meet the target time. "
+    "Do NOT include other problems."
+  )
+  return [
+    {"role": "system", "content": [{"type": "text", "text": sys_text}]},
+    {"role": "user", "content": [{"type": "text", "text": user_text}]},
+  ]
+
+
+def _merge_plans(plans: List[dict], chapter: str) -> dict:
+  merged = {"schema_version": SCHEMA_VERSION, "chapter": chapter, "slides": []}
+  seen_ids = set()
+  for plan in plans:
+    for s in plan.get("slides", []) or []:
+      sid = s.get("id") or "slide"
+      # Ensure unique slide ids when stitching
+      base = sid
+      k = 1
+      while sid in seen_ids:
+        sid = f"{base}-{k}"
+        k += 1
+      s["id"] = sid
+      seen_ids.add(sid)
+      merged["slides"].append(s)
+  return merged
 
 def _parse_json_lenient(content: str) -> dict:
   """
@@ -185,12 +262,73 @@ def _parse_json_lenient(content: str) -> dict:
       return json.loads(s_fixed)
     raise
 
+def _validate_plan(plan: dict) -> None:
+  if not isinstance(plan, dict):
+    raise RuntimeError("Plan is not a JSON object.")
+  if plan.get("schema_version") != SCHEMA_VERSION:
+    raise RuntimeError(f"schema_version mismatch or missing (expected {SCHEMA_VERSION}).")
+  if "chapter" not in plan or not isinstance(plan["chapter"], str) or not plan["chapter"].strip():
+    raise RuntimeError("chapter must be a non-empty string.")
+  slides = plan.get("slides")
+  if not isinstance(slides, list) or not slides:
+    raise RuntimeError("slides must be a non-empty array.")
+  for i, s in enumerate(slides):
+    if not isinstance(s, dict):
+      raise RuntimeError(f"slide[{i}] must be object.")
+    for k in ["id","marp_md","narration","manim"]:
+      if k not in s:
+        raise RuntimeError(f"slide[{i}] missing key: {k}")
+    if not isinstance(s["id"], str) or not s["id"].strip():
+      raise RuntimeError(f"slide[{i}].id must be non-empty string.")
+    if s.get("problem") is not None and not isinstance(s.get("problem"), str):
+      raise RuntimeError(f"slide[{i}].problem must be string or null.")
+    role = s.get("role")
+    if role is not None and role not in ["statement","derivation","result","review","ref"]:
+      raise RuntimeError(f"slide[{i}].role invalid: {role}")
+    if not isinstance(s["marp_md"], str) or not s["marp_md"].startswith("---\n"):
+      raise RuntimeError(f"slide[{i}].marp_md must start with '---\\n'.")
+    narr = s["narration"]
+    if not isinstance(narr, list):
+      raise RuntimeError(f"slide[{i}].narration must be array.")
+    for j, line in enumerate(narr):
+      if not isinstance(line, dict) or "text" not in line or "gestures" not in line:
+        raise RuntimeError(f"slide[{i}].narration[{j}] must have text and gestures.")
+      if not isinstance(line["text"], str) or not line["text"].strip():
+        raise RuntimeError(f"slide[{i}].narration[{j}].text must be non-empty string.")
+      gs = line["gestures"]
+      if not isinstance(gs, list) or any(g not in ALLOWED_GESTURES for g in gs):
+        raise RuntimeError(f"slide[{i}].narration[{j}].gestures must be among {ALLOWED_GESTURES}.")
+      if "duration_sec" in line and not isinstance(line["duration_sec"], (int, float)):
+        raise RuntimeError(f"slide[{i}].narration[{j}].duration_sec must be number if present.")
+    manim = s["manim"]
+    if not isinstance(manim, list):
+      raise RuntimeError(f"slide[{i}].manim must be array.")
+    for j, blk in enumerate(manim):
+      if not isinstance(blk, dict):
+        raise RuntimeError(f"slide[{i}].manim[{j}] must be object.")
+      for req in ["id","description","code","overlay"]:
+        if req not in blk:
+          raise RuntimeError(f"slide[{i}].manim[{j}] missing key: {req}")
+      ov = blk["overlay"]
+      if not isinstance(ov, dict) or ov.get("position") not in ["top-left","top-right","bottom-left","bottom-right"]:
+        raise RuntimeError(f"slide[{i}].manim[{j}].overlay.position invalid.")
+      if "width" not in ov or not isinstance(ov["width"], str):
+        raise RuntimeError(f"slide[{i}].manim[{j}].overlay.width must be string like '40%'.")
+      if "start_at_sec" in ov and not isinstance(ov["start_at_sec"], (int, float)):
+        raise RuntimeError(f"slide[{i}].manim[{j}].overlay.start_at_sec must be number if present.")
+
 def _call_openai(messages: List[dict], model: str, max_retries: int, backoff: float) -> dict:
   client = _ensure_openai()
   last_exc = None
   for attempt in range(max_retries):
     try:
-      resp = client.chat.completions.create(model=model, messages=messages, temperature=0.2)
+      kwargs = {
+        "model": model,
+        "messages": messages,
+        "response_format": {"type": "json_object"},
+        "temperature": 0.2,
+      }
+      resp = client.chat.completions.create(**kwargs)
       content = (resp.choices[0].message.content or "").strip()
       plan = _parse_json_lenient(content)
       return plan
@@ -214,18 +352,45 @@ def make_script(
   global VERBOSE
   VERBOSE = verbose
 
+  # Set module globals for CLI arg access
+  globals()["ARGS_PER_PROBLEM"] = False
+  globals()["ARGS_MIN_SECONDS"] = 60
+  globals()["ARGS_MAX_SECONDS"] = 600
+  globals()["ARGS_SECONDS_PER_1K"] = 120
+
   data = _read_json(solutions_path)
   chapter = data.get("chapter") or "?"
   problems: Dict[str, dict] = data.get("problems", {})
   _log(f"Loaded {len(problems)} solved problems for chapter {chapter}")
+  _log(f"Mode: {'per-problem' if getattr(sys.modules[__name__], 'ARGS_PER_PROBLEM', False) else 'batch'}; duration targeting: min={getattr(sys.modules[__name__], 'ARGS_MIN_SECONDS', 60)}s, max={getattr(sys.modules[__name__], 'ARGS_MAX_SECONDS', 600)}s, scale={getattr(sys.modules[__name__], 'ARGS_SECONDS_PER_1K', 120)}/1k chars")
 
-  messages = _build_prompt(chapter, problems)
-  _log(f"Requesting lecture plan from model for {len(problems)} problems...")
-  plan = _call_openai(messages, model=model, max_retries=max_retries, backoff=backoff)
-  # Basic validation
-  if not isinstance(plan, dict) or "slides" not in plan:
-    raise RuntimeError("Invalid plan JSON from model.")
-  plan.setdefault("chapter", chapter)
+  use_per_problem = getattr(sys.modules[__name__], "ARGS_PER_PROBLEM", False)  # patched below
+  if use_per_problem:
+    plans = []
+    for idx, (k, meta) in enumerate(problems.items(), start=1):
+      tgt = _estimate_target_seconds(
+        meta.get("solution_markdown",""),
+        min_s=getattr(sys.modules[__name__], "ARGS_MIN_SECONDS", 60),
+        max_s=getattr(sys.modules[__name__], "ARGS_MAX_SECONDS", 600),
+        per_1k=getattr(sys.modules[__name__], "ARGS_SECONDS_PER_1K", 120)
+      )
+      _log(f"[{idx}/{len(problems)}] Building plan for problem {k} (target ~{tgt}s)...")
+      messages = _build_prompt_for_problem(chapter, k, meta, tgt)
+      plan_piece = _call_openai(messages, model=model, max_retries=max_retries, backoff=backoff)
+      # validate each piece
+      if plan_piece.get("chapter") != chapter:
+        plan_piece["chapter"] = chapter
+      _validate_plan(plan_piece)
+      plans.append(plan_piece)
+    plan = _merge_plans(plans, chapter)
+  else:
+    messages = _build_prompt(chapter, problems)
+    _log(f"Requesting lecture plan from model for {len(problems)} problems...")
+    plan = _call_openai(messages, model=model, max_retries=max_retries, backoff=backoff)
+    _validate_plan(plan)
+    plan.setdefault("chapter", chapter)
+  if plan.get("schema_version") != SCHEMA_VERSION:
+    plan["schema_version"] = SCHEMA_VERSION
   _log(f"Parsed plan with {len(plan.get('slides', []) or [])} slides.")
 
   # Assemble MARP
@@ -254,10 +419,19 @@ def _parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
   p.add_argument("--max-retries", type=int, default=8)
   p.add_argument("--backoff", type=float, default=1.6)
   p.add_argument("--verbose", action="store_true")
+  p.add_argument("--per-problem", action="store_true", help="Call the model once per problem and stitch slides.")
+  p.add_argument("--min-seconds", type=int, default=60, help="Minimum target narration duration per problem (seconds).")
+  p.add_argument("--max-seconds", type=int, default=600, help="Maximum target narration duration per problem (seconds).")
+  p.add_argument("--seconds-per-1kchars", type=int, default=120, help="Scale seconds by solution length: target ~= min(max(min_seconds, len_chars/1000 * seconds_per_1kchars), max_seconds).")
   return p.parse_args(argv)
 
 if __name__ == "__main__":
   args = _parse_args()
+  # Set module globals for helpers
+  ARGS_PER_PROBLEM = args.per_problem
+  ARGS_MIN_SECONDS = args.min_seconds
+  ARGS_MAX_SECONDS = args.max_seconds
+  ARGS_SECONDS_PER_1K = args.seconds_per_1kchars
   try:
     make_script(
       solutions_path=args.solutions,
