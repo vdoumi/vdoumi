@@ -3,7 +3,7 @@ import os
 import re
 
 def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
-    """
+    r"""
     Normalize MARP markdown:
     - Keep LaTeX intact; convert \( \) → $...$ (inline), \[ \] → $$...$$ (block).
     - Replace ONLY literal JSON-style '\n' with real newlines, but DO NOT touch LaTeX commands like \neq, \nabla.
@@ -76,8 +76,8 @@ def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
 
     # New: If a line contains LaTeX commands but no $, wrap with $$...$$ (and fix boxed).
     def _wrap_display_math_if_needed(line: str) -> str:
-        """
-        If a line contains LaTeX commands (e.g., \dfrac, \boxed) but has no `$`:
+        r"""
+        If a line contains LaTeX commands (e.g., \\dfrac, \\boxed) but has no `$`:
         - If the line has a short prose prefix ending with ':' (e.g., "정답:"), keep the prefix and wrap only the math tail.
         - Otherwise wrap the WHOLE line with $$ ... $$. Also clean nested $ around \boxed.
         Always remove stray backslash after closing $$ at EOL.
@@ -97,10 +97,41 @@ def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
         line = re.sub(r"\$\\boxed\{([^}]*)\}\$", r"\\boxed{\1}", line)
         return f"$${line}$$"
 
+    def _wrap_outside_math_fragments(line: str) -> str:
+        r"""
+        Scan a line, preserving existing $...$ and $$...$$ math, and for any
+        NON-math fragment that still contains TeX-like commands (e.g., \\quad, \\dfrac, \\\\, \\text{...}),
+        wrap ONLY that fragment with inline math $...$.
+        This prevents raw red/boxed text leaking into the slide.
+        """
+        if "\\" not in line:
+            return line
+
+        # Split by display math first
+        parts = re.split(r"(\$\$.*?\$\$)", line)
+        for i, part in enumerate(parts):
+            if i % 2 == 1:  # this is a $$...$$ block, keep as is
+                continue
+            # Now split the non-display fragment by inline math
+            subparts = re.split(r"(\$.*?\$)", part)
+            for j, sp in enumerate(subparts):
+                if j % 2 == 1:  # this is an inline $...$ block, keep as is
+                    continue
+                if re.search(r"\\[A-Za-z]+|\\{|\\}|\\\\", sp):
+                    # Clean common artifacts before wrapping
+                    sp_clean = sp
+                    # Remove accidental spaces before backslashes that break commands
+                    sp_clean = re.sub(r"\s+\\\s+", r" \\", sp_clean)
+                    # If it's just whitespace, skip
+                    if sp_clean.strip():
+                        subparts[j] = f"${sp_clean}$"
+            parts[i] = "".join(subparts)
+        return "".join(parts)
+
     # 7) Split any slide that has more than 8 NON-EMPTY lines (to avoid overflow).
     #    Blank lines are preserved but do not count toward the limit.
     def _split_long_slide(block: str, title_suffix_idx: int = 1) -> list[str]:
-        """
+        r"""
         Split a slide into chunks with at most 8 NON-EMPTY lines each.
         Blank lines are preserved but do not count toward the limit.
         Add a small '(이어서)' marker on subsequent chunks.
@@ -146,7 +177,11 @@ def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
     processed_blocks = []
     for blk in blocks:
         # First, ensure math-heavy lines are wrapped in display mode if they lack $.
-        fixed_lines = [_wrap_display_math_if_needed(ln) for ln in blk.split("\n")]
+        fixed_lines = []
+        for ln in blk.split("\n"):
+            ln = _wrap_display_math_if_needed(ln)
+            ln = _wrap_outside_math_fragments(ln)
+            fixed_lines.append(ln)
         blk_fixed = "\n".join(fixed_lines)
         processed_blocks.extend(_split_long_slide(blk_fixed))
 
@@ -155,6 +190,9 @@ def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
     # If the result accidentally starts with a delimiter, drop it to avoid an empty first slide
     if text.startswith('---\n'):
         text = text[4:]
+
+    # Normalize excessive blank lines
+    text = re.sub(r"\n{3,}", "\n\n", text)
 
     with open('temp.md', 'w', encoding='utf-8') as f:
         f.write(text)

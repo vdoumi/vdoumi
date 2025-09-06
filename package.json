@@ -1,0 +1,23 @@
+{
+  "name": "vdoumi",
+  "version": "1.0.0",
+  "description": "I'm Virtual Math Helper, What can I help you?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdoumi/vdoumi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vdoumi/vdoumi/issues"
+  },
+  "homepage": "https://github.com/vdoumi/vdoumi#readme",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3"
+  }
+}
