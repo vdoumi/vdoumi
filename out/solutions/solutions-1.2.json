@@ -1,0 +1,250 @@
+{
+  "chapter": "1.2",
+  "model": "gpt-5-mini",
+  "problems": {
+    "1.2-1": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 1,
+        "images": [
+          "problems/images/boyce 1.2-1.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We solve each linear first-order initial value problem using the integrating-factor method. For an equation of the form\n$$\\frac{dy}{dt}+p(t)y=q(t)$$\nthe integrating factor is $\\mu(t)=e^{\\int p(t)\\,dt}$ and then\n$$\\frac{d}{dt}\\big(\\mu(t)y\\big)=\\mu(t)q(t).$$\n\na) dy/dt = −y + 5, y(0)=y0\n\nWrite as\n$$\\frac{dy}{dt}+y=5,$$\nso $p(t)=1$ and $\\mu(t)=e^{\\int 1\\,dt}=e^{t}$. Then\n$$\\frac{d}{dt}\\big(e^{t}y\\big)=5e^{t}.$$\nIntegrate both sides with respect to $t$:\n$$e^{t}y=5e^{t}+C\\quad\\Rightarrow\\quad y=5+Ce^{-t}.$$\nApply $y(0)=y_0$:\n$$y_0=5+C\\quad\\Rightarrow\\quad C=y_0-5.$$\nThus\n$$\\boxed{\\,y(t)=5+(y_0-5)e^{-t}\\,.}$$\nBehavior: equilibrium 5; solutions approach 5 as $t\\to\\infty$ at rate $e^{-t}$. If $y_0=5$ the solution is constant $y(t)\\equiv5$.\n\nb) dy/dt = −2y + 5, y(0)=y0\n\nWrite as\n$$\\frac{dy}{dt}+2y=5,$$\nso $p(t)=2$ and $\\mu(t)=e^{2t}$. Then\n$$\\frac{d}{dt}\\big(e^{2t}y\\big)=5e^{2t}.$$\nIntegrate:\n$$e^{2t}y=\\frac{5}{2}e^{2t}+C\\quad\\Rightarrow\\quad y=\\frac{5}{2}+Ce^{-2t}.$$\nApply $y(0)=y_0$:\n$$y_0=\\frac{5}{2}+C\\quad\\Rightarrow\\quad C=y_0-\\frac{5}{2}.$$\nThus\n$$\\boxed{\\,y(t)=\\frac{5}{2}+\\Big(y_0-\\frac{5}{2}\\Big)e^{-2t}\\,.}$$\nBehavior: equilibrium $5/2$; solutions approach $5/2$ as $t\\to\\infty$ faster than in (a) because of the $e^{-2t}$ factor.\n\nc) dy/dt = −2y + 10, y(0)=y0\n\nWrite as\n$$\\frac{dy}{dt}+2y=10,$$\nagain $\\mu(t)=e^{2t}$. Then\n$$\\frac{d}{dt}\\big(e^{2t}y\\big)=10e^{2t}.$$\nIntegrate:\n$$e^{2t}y=5e^{2t}+C\\quad\\Rightarrow\\quad y=5+Ce^{-2t}.$$\nApply $y(0)=y_0$:\n$$y_0=5+C\\quad\\Rightarrow\\quad C=y_0-5.$$\nThus\n$$\\boxed{\\,y(t)=5+(y_0-5)e^{-2t}\\,.}$$\nBehavior: equilibrium 5; solutions approach 5 as $t\\to\\infty$ at rate $e^{-2t}$ (faster than (a)).\n\nComparison (how they resemble and differ)\n- All three solutions are exponentials approaching a constant equilibrium value as $t\\to\\infty$.\n- Each solution has the form equilibrium + (initial offset)·e^{−(decay rate) t}.\n- Decay rates: (a) rate 1 (factor $e^{-t}$), (b) and (c) rate 2 (factor $e^{-2t}$) — so (b) and (c) relax faster than (a).\n- Equilibria: (a) and (c) have equilibrium 5; (b) has equilibrium 5/2.\n- If $y_0$ equals the equilibrium value, the solution is the constant equilibrium.\n\nExample specific solutions for common initial values:\n- For y0 = 0:\n  - (a) y(t)=5−5e^{-t}\n  - (b) y(t)=5/2−(5/2)e^{-2t}\n  - (c) y(t)=5−5e^{-2t}\n- For y0 = 5:\n  - (a) and (c): y(t)=5 (constant)\n  - (b): y(t)=5/2+(5−5/2)e^{-2t}=5/2+(5/2)e^{-2t} (decays to 5/2)\n\nThese formulas give the plotted curves: exponentials starting at y0 and monotonically approaching their equilibria.",
+      "images": [
+        "problems/images/boyce 1.2-1.png"
+      ],
+      "context_from": []
+    },
+    "1.2-2": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 2,
+        "images": [
+          "problems/images/boyce 1.2-2.png"
+        ],
+        "predecessors": [
+          "1.2-1"
+        ],
+        "external_refs": []
+      },
+      "solution_markdown": "We solve each linear first‑order IVP by the integrating‑factor method (as in Problem 1.2–1).\n\nGeneral form: write the equation as\n$$\\frac{dy}{dt}+p(t)y=q(t),\\qquad \\mu(t)=e^{\\int p(t)\\,dt},\\qquad\n\\frac{d}{dt}\\big(\\mu(t)y\\big)=\\mu(t)q(t).$$\n\na) dy/dt = y − 5, y(0)=y0.\n\nWrite as\n$$\\frac{dy}{dt}-y=-5,$$\nso $p(t)=-1$ and $\\mu(t)=e^{\\int -1\\,dt}=e^{-t}$. Then\n$$\\frac{d}{dt}\\big(e^{-t}y\\big)=-5e^{-t}.$$\nIntegrate:\n$$e^{-t}y=-5\\int e^{-t}\\,dt +C=-5(-e^{-t})+C=5e^{-t}+C.$$\nThus\n$$y=5+Ce^{t}.$$\nApply $y(0)=y_0$: $y_0=5+C\\Rightarrow C=y_0-5$. Therefore\n$$\\boxed{\\,y(t)=5+(y_0-5)e^{t}\\,.}$$\nEquilibrium $y=5$; because of the $e^{t}$ factor this equilibrium is unstable unless $y_0=5$ (then $y\\equiv5$).\n\nb) dy/dt = 2y − 5, y(0)=y0.\n\nWrite as\n$$\\frac{dy}{dt}-2y=-5,$$\nso $p(t)=-2$ and $\\mu(t)=e^{-2t}$. Then\n$$\\frac{d}{dt}\\big(e^{-2t}y\\big)=-5e^{-2t}.$$\nIntegrate:\n$$e^{-2t}y=-5\\int e^{-2t}\\,dt +C=-5\\Big(-\\tfrac{1}{2}e^{-2t}\\Big)+C=\\tfrac{5}{2}e^{-2t}+C.$$\nThus\n$$y=\\tfrac{5}{2}+Ce^{2t}.$$\nApply $y(0)=y_0$: $y_0=\\tfrac{5}{2}+C\\Rightarrow C=y_0-\\tfrac{5}{2}$. Therefore\n$$\\boxed{\\,y(t)=\\frac{5}{2}+\\Big(y_0-\\frac{5}{2}\\Big)e^{2t}\\,.}$$\nEquilibrium $y=5/2$; unstable (solutions grow like $e^{2t}$) unless $y_0=5/2$.\n\nc) dy/dt = 2y − 10, y(0)=y0.\n\nWrite as\n$$\\frac{dy}{dt}-2y=-10,$$\n$p(t)=-2$, $\\mu(t)=e^{-2t}$. Then\n$$\\frac{d}{dt}\\big(e^{-2t}y\\big)=-10e^{-2t}.$$\nIntegrate:\n$$e^{-2t}y=-10\\int e^{-2t}\\,dt +C=-10\\Big(-\\tfrac{1}{2}e^{-2t}\\Big)+C=5e^{-2t}+C.$$\nThus\n$$y=5+Ce^{2t}.$$\nApply $y(0)=y_0$: $y_0=5+C\\Rightarrow C=y_0-5$. Therefore\n$$\\boxed{\\,y(t)=5+(y_0-5)e^{2t}\\,.}$$\nEquilibrium $y=5$; unstable unless $y_0=5$.\n\nRemarks: These three solutions have the same form \"equilibrium + (initial offset)·e^{(growth rate)t}\". They differ from the analogous problems in Problem 1 (where the coefficient of y had opposite sign) in that here the homogeneous factors are growing exponentials ($e^{t},e^{2t}$) rather than decaying ($e^{-t},e^{-2t}$), so the equilibria are unstable here.",
+      "images": [
+        "problems/images/boyce 1.2-2.png"
+      ],
+      "context_from": [
+        "1.2-1"
+      ]
+    },
+    "1.2-3": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 3,
+        "images": [
+          "problems/images/boyce 1.2-3.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the first-order linear ODE\n\\[\n\\frac{dy}{dt} = -a y + b,\\qquad a>0,\\ b>0.\n\\]\n\n1) Solve the ODE (general solution).\n\nWrite it in standard linear form\n\\[\n\\frac{dy}{dt} + a y = b.\n\\]\nUse the integrating factor \\(\\mu(t)=e^{\\int a\\,dt}=e^{at}\\). Multiply both sides:\n\\[\ne^{at}\\frac{dy}{dt} + a e^{at} y = b e^{at}\n\\quad\\Longrightarrow\\quad\n\\frac{d}{dt}\\big(e^{at}y\\big)=b e^{at}.\n\\]\nIntegrate with respect to \\(t\\):\n\\[\ne^{at}y = \\int b e^{at}\\,dt = \\frac{b}{a} e^{at} + C,\n\\]\nwhere \\(C\\) is an arbitrary constant. Solve for \\(y\\):\n\\[\ny(t)=\\frac{b}{a} + C e^{-at}.\n\\]\nIf the initial condition is \\(y(0)=y_0\\), then\n\\[\nC = y_0-\\frac{b}{a},\n\\]\nso the solution with initial value \\(y_0\\) is\n\\[\n\\boxed{\\,y(t)=\\frac{b}{a}+\\Big(y_0-\\frac{b}{a}\\Big)e^{-at}\\,.}\n\\]\n\n2) Qualitative sketch for several initial conditions.\n\n- The constant \\(\\displaystyle y_\\infty:=\\frac{b}{a}\\) is the equilibrium (steady state): if \\(y_0=y_\\infty\\) then \\(y(t)=y_\\infty\\) for all \\(t\\).\n- The transient term \\(C e^{-at}\\) decays exponentially because \\(a>0\\).\n- If \\(y_0>y_\\infty\\) then \\(C>0\\) and \\(y(t)\\) decreases monotonically toward \\(y_\\infty\\).\n- If \\(y_0<y_\\infty\\) then \\(C<0\\) and \\(y(t)\\) increases monotonically toward \\(y_\\infty\\).\n- All solution curves are horizontal translations of the same exponential relaxation toward the horizontal line \\(y=b/a\\). The time constant is \\(\\tau=1/a\\): after time \\(\\tau\\), the transient has decayed by a factor \\(e^{-1}\\).\n\n(If drawn: horizontal line at \\(y=b/a\\); curves starting above decay exponentially down to it; curves starting below rise exponentially up to it.)\n\n3) How solutions change when parameters vary.\n\ni. a increases (b fixed):\n- Equilibrium \\(y_\\infty=b/a\\) decreases (since denominator increases).\n- The decay rate \\(a\\) increases, so the transient \\(e^{-at}\\) decays faster (smaller time constant \\(\\tau=1/a\\)). Thus solutions approach the (now lower) equilibrium more quickly.\n\nii. b increases (a fixed):\n- Equilibrium \\(y_\\infty=b/a\\) increases (shifts upward).\n- The transient amplitude \\(C=y_0-b/a\\) changes because the equilibrium moved; the direction of motion may change if \\(y_0\\) compared to the new equilibrium changes. The rate \\(a\\) is unchanged, so the exponential decay speed is unchanged.\n\niii. Both a and b increase but the ratio \\(b/a\\) remains the same:\n- Equilibrium \\(y_\\infty=b/a\\) is unchanged.\n- The transient amplitude \\(C=y_0-y_\\infty\\) is unchanged.\n- Because \\(a\\) increased, the transient \\(e^{-at}\\) decays faster, so solutions approach the same equilibrium more quickly. In other words: same steady state and same initial offset, but faster relaxation when a is larger.\n\nExtra remark: the sign of the initial slope is\n\\[\n\\left.\\frac{dy}{dt}\\right|_{t=0}=-a y_0+b=-a\\Big(y_0-\\frac{b}{a}\\Big)=-aC,\n\\]\nconsistent with the monotone approach described above.",
+      "images": [
+        "problems/images/boyce 1.2-3.png"
+      ],
+      "context_from": []
+    },
+    "1.2-4": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 4,
+        "images": [
+          "problems/images/boyce 1.2-4.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the ODE\n\\[\n\\frac{dy}{dt}=ay-b,\n\\]\nand asked for the equilibrium solution and the ODE for deviations from equilibrium.\n\nAssumptions/definitions:\n- An equilibrium solution \\(y_e\\) is a constant solution for which \\(\\dfrac{dy}{dt}=0\\).\n- Define the deviation \\(Y(t)=y(t)-y_e\\). Note \\(y_e\\) is constant so \\(\\dfrac{dY}{dt}=\\dfrac{dy}{dt}\\).\n\n(a) Find \\(y_e\\).\n\nSet \\(\\dfrac{dy}{dt}=0\\) and solve:\n\\[\n0 = a y_e - b \\quad\\Longrightarrow\\quad a y_e = b.\n\\]\n- If \\(a\\neq 0\\), \\(y_e=\\dfrac{b}{a}\\).\n- If \\(a=0\\), the equation becomes \\(\\dfrac{dy}{dt}=-b\\). This has no constant equilibrium unless \\(b=0\\); if \\(a=0\\) and \\(b=0\\) then every constant \\(y\\) is an equilibrium.\n\n(b) Find the ODE satisfied by \\(Y(t)=y-y_e\\).\n\nDifferentiate \\(Y\\):\n\\[\n\\frac{dY}{dt}=\\frac{dy}{dt}=a y - b = a(y_e+Y)-b = (a y_e - b) + aY.\n\\]\nBy the equilibrium condition \\(a y_e-b=0\\) (for the case \\(a\\neq0\\) and \\(y_e=b/a\\)), this simplifies to\n\\[\n\\frac{dY}{dt}=aY.\n\\]\n\nRemarks:\n- Thus deviations from equilibrium satisfy the linear homogeneous ODE \\(\\dfrac{dY}{dt}=aY\\).\n- If \\(a<0\\) deviations decay to 0 (stable equilibrium), if \\(a>0\\) they grow (unstable).  \n- For the special case \\(a=0\\): if \\(b=0\\) any constant is equilibrium and \\(Y'=0\\); if \\(b\\neq0\\) there is no equilibrium.",
+      "images": [
+        "problems/images/boyce 1.2-4.png"
+      ],
+      "context_from": []
+    },
+    "1.2-5": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 5,
+        "images": [
+          "problems/images/boyce 1.2-5-1.png",
+          "problems/images/boyce 1.2-5-2.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We solve the equation\n$$\\frac{dy}{dt}=ay-b\\qquad(31)$$\nby the undetermined-constant-shift method requested.\n\na) Solve the simpler equation\n$$\\frac{dy}{dt}=ay\\qquad(32).$$\nThis is separable (or a first-order linear homogeneous equation). For y\\neq0,\n$$\\frac{dy}{y}=a\\,dt.$$\nIntegrating,\n$$\\ln|y|=at+C_1\\quad\\Rightarrow\\quad y_1(t)=Ce^{at},$$\nwhere $C=e^{C_1}$ is an arbitrary constant. (This formula also includes the zero solution when $C=0$.)\n\nb) Assume the solution of (31) differs from $y_1(t)$ by an additive constant $k$:\n$$y(t)=y_1(t)+k=Ce^{at}+k.$$\nDifferentiate and substitute into (31). Since $y_1$ satisfies (32), $\\frac{dy_1}{dt}=ay_1$, and\n$$\\frac{dy}{dt}=\\frac{d}{dt}(y_1+k)=\\frac{dy_1}{dt}=ay_1.$$\nEquation (31) requires $\\frac{dy}{dt}=ay-b$, so\n$$ay_1 = a(y_1+k)-b.$$\nCancel $ay_1$ from both sides to get\n$$0 = ak-b \\quad\\Rightarrow\\quad ak=b.$$\n- If $a\\neq0$, this gives the constant shift\n  $$k=\\frac{b}{a},$$\n  hence the general solution is\n  $$y(t)=Ce^{at}+\\frac{b}{a}.$$\n  Verify: $\\frac{dy}{dt}=aCe^{at}=a\\big(Ce^{at}+\\frac{b}{a}\\big)-b=a y-b,$ so it satisfies (31).\n\n- If $a=0$, equation (31) becomes $\\frac{dy}{dt}=-b$. Integrating,\n  $$y(t)=-bt+C',$$\n  which cannot be written as $y_1(t)+k$ with $y_1(t)=Ce^{0\\cdot t}=C$ and a constant $k=b/a$ (because $b/a$ is undefined). Thus the special case $a=0$ must be handled separately; its solution is linear in $t$ as given.\n\nc) Comparison with the text (equation (17)): for $a\\neq0$ the solution found,\n$$y(t)=Ce^{at}+\\frac{b}{a},$$\nis the same standard form (with the particular solution $b/a$ and homogeneous part $Ce^{at}$). With an initial condition $y(0)=y_0$ one gets\n$$y(t)=\\left(y_0-\\frac{b}{a}\\right)e^{at}+\\frac{b}{a}.$$\n\nSummary:\n- For a\\neq0: y(t)=Ce^{at}+b/a.\n- For a=0: y(t)=-bt+C'.",
+      "images": [
+        "problems/images/boyce 1.2-5-1.png",
+        "problems/images/boyce 1.2-5-2.png"
+      ],
+      "context_from": []
+    },
+    "1.2-6": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 6,
+        "images": [
+          "problems/images/boyce 1.2-6.png"
+        ],
+        "predecessors": [
+          "1.2-5"
+        ],
+        "external_refs": []
+      },
+      "solution_markdown": "We solve the linear ODE\n\\[\n\\frac{dy}{dt}=-ay+b,\n\\]\nwhere \\(a,b\\) are constants and \\(t\\) is the independent variable. We use the undetermined-constant-shift method of Problem 5.\n\n1. Solve the homogeneous equation.\n   \\[\n   \\frac{dy_1}{dt}=-a y_1.\n   \\]\n   This is separable: \\(\\frac{dy_1}{y_1}=-a\\,dt\\). Integrating yields \\(\\ln|y_1|=-at+C_1\\), so\n   \\[\n   y_1(t)=Ce^{-at},\n   \\]\n   where \\(C=e^{C_1}\\) is an arbitrary constant (including \\(C=0\\)).\n\n2. Seek a particular solution by a constant shift: assume\n   \\[\n   y(t)=y_1(t)+k = Ce^{-at}+k\n   \\]\n   for some constant \\(k\\). Differentiate:\n   \\[\n   \\frac{dy}{dt}=\\frac{d}{dt}y_1 = -a y_1 = -a(Ce^{-at}).\n   \\]\n   The ODE requires\n   \\[\n   \\frac{dy}{dt}=-a y+b = -a(y_1+k)+b = -a y_1 - a k + b.\n   \\]\n   Equating the two expressions gives\n   \\[\n   -a y_1 = -a y_1 - a k + b \\quad\\Rightarrow\\quad -a k + b = 0,\n   \\]\n   so\n   \\[\n   a k = b.\n   \\]\n\n3. Two cases.\n\n   - If \\(a\\neq0\\): \\(k=\\dfrac{b}{a}\\). Thus the general solution is\n     \\[\n     y(t)=Ce^{-at}+\\frac{b}{a}.\n     \\]\n     With an initial condition \\(y(0)=y_0\\) one gets\n     \\[\n     y(t)=\\Bigl(y_0-\\frac{b}{a}\\Bigr)e^{-at}+\\frac{b}{a}.\n     \\]\n     (Verify by substitution: \\(\\frac{dy}{dt}=-aCe^{-at}= -a\\big(Ce^{-at}+\\tfrac{b}{a}\\big)+b = -a y + b\\).)\n\n   - If \\(a=0\\): the equation becomes \\(\\frac{dy}{dt}=b\\). Integrating,\n     \\[\n     y(t)=bt+C',\n     \\]\n     where \\(C'\\) is an arbitrary constant.\n\nSummary:\n- For \\(a\\neq0\\): \\(y(t)=Ce^{-at}+\\dfrac{b}{a}\\).\n- For \\(a=0\\): \\(y(t)=bt+C'\\).",
+      "images": [
+        "problems/images/boyce 1.2-6.png"
+      ],
+      "context_from": [
+        "1.2-5"
+      ]
+    },
+    "1.2-7": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 7,
+        "images": [
+          "problems/images/boyce 1.2-7.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the population \\(p(t)\\) satisfying the linear ODE\n\\[\n\\frac{dp}{dt}=\\frac{1}{2}p-450.\n\\]\n\nSolve the ODE. Rewrite as\n\\[\n\\frac{dp}{dt}-\\frac{1}{2}p=-450.\n\\]\nThe equilibrium (particular constant) solution is found by setting \\(dp/dt=0\\):\n\\[\n\\frac{1}{2}p_* -450=0\\quad\\Rightarrow\\quad p_*=900.\n\\]\nThe homogeneous equation \\(\\frac{dp}{dt}-\\frac{1}{2}p=0\\) has solutions \\(Ce^{t/2}\\). Thus the general solution is\n\\[\np(t)=900 + C e^{t/2}.\n\\]\nUse the initial value \\(p(0)=p_0\\) to find \\(C\\): \\(p_0=900+C\\), so \\(C=p_0-900\\). Therefore\n\\[\n\\boxed{p(t)=900+(p_0-900)e^{t/2}.}\n\\]\n\nExtinction time \\(T\\) is the smallest \\(t\\ge0\\) with \\(p(t)=0\\). Solve\n\\[\n0=900+(p_0-900)e^{T/2}\\quad\\Longrightarrow\\quad e^{T/2}=\\frac{900}{900-p_0},\n\\]\nwhich requires \\(0<p_0<900\\). Taking logs,\n\\[\n\\boxed{T=2\\ln\\!\\left(\\frac{900}{900-p_0}\\right),\\qquad(0<p_0<900).}\n\\]\nIf \\(p_0\\ge900\\) there is no extinction: \\(p_0=900\\) gives the constant solution \\(p(t)\\equiv900\\), and \\(p_0>900\\) gives monotone growth.\n\nNow answer the parts:\n\na. For \\(p(0)=850\\) (so \\(p_0=850\\)),\n\\[\nT=2\\ln\\!\\left(\\frac{900}{900-850}\\right)=2\\ln\\!\\left(\\frac{900}{50}\\right)=2\\ln(18)\\approx 5.7807\\ \\text{years}.\n\\]\n\nb. For general \\(p_0\\) with \\(0<p_0<900\\),\n\\[\nT=2\\ln\\!\\left(\\frac{900}{900-p_0}\\right).\n\\]\n\nc. If extinction is to occur in \\(1\\) year (\\(T=1\\)), solve\n\\[\n1=2\\ln\\!\\left(\\frac{900}{900-p_0}\\right)\\quad\\Rightarrow\\quad \\frac{900}{900-p_0}=e^{1/2}.\n\\]\nHence\n\\[\n900-p_0=900e^{-1/2}\\quad\\Rightarrow\\quad p_0=900\\bigl(1-e^{-1/2}\\bigr)\\approx 354.12.\n\\]",
+      "images": [
+        "problems/images/boyce 1.2-7.png"
+      ],
+      "context_from": []
+    },
+    "1.2-8": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 8,
+        "images": [
+          "problems/images/boyce 1.2-8.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the linear initial-value problem\n\\[\n\\frac{dv}{dt}=9.8-\\frac{v}{5},\\qquad v(0)=0.\n\\]\nAssume motion from rest at position \\(s(0)=0\\). Solve for \\(v(t)\\) and then answer parts (a) and (b).\n\n1. Solve the ODE for v(t).\n\nWrite the equation in standard linear form:\n\\[\n\\frac{dv}{dt}+\\frac{1}{5}v=9.8.\n\\]\nThe integrating factor is \\(\\mu(t)=e^{\\int (1/5)\\,dt}=e^{t/5}\\). Multiply through and integrate:\n\\[\n\\frac{d}{dt}\\big(v e^{t/5}\\big)=9.8 e^{t/5}\\quad\\Rightarrow\\quad v e^{t/5}=9.8\\cdot5\\,e^{t/5}+C=49e^{t/5}+C.\n\\]\nHence\n\\[\nv(t)=49 + C e^{-t/5}.\n\\]\nUse \\(v(0)=0\\) to find \\(C=-49\\). Thus\n\\[\n\\boxed{\\,v(t)=49\\big(1-e^{-t/5}\\big)\\ \\text{m/s}\\,}\n\\]\nThe limiting (terminal) velocity is \\(v_{\\infty}=49\\) m/s.\n\n2. (a) Time to reach 98% of limiting velocity.\n\nSet \\(v(t)=0.98\\cdot49\\):\n\\[\n49\\big(1-e^{-t/5}\\big)=49\\cdot0.98\\quad\\Rightarrow\\quad e^{-t/5}=0.02.\n\\]\nSo\n\\[\n-t/5=\\ln(0.02)\\quad\\Rightarrow\\quad t= -5\\ln(0.02)=5\\ln(50).\n\\]\nNumerically,\n\\[\n\\boxed{\\,t=5\\ln 50\\approx 19.56\\ \\text{s}\\,.}\n\\]\n\n3. (b) Distance fallen in that time.\n\nVelocity is \\(v(t)=ds/dt\\). Integrate with \\(s(0)=0\\):\n\\[\ns(t)=\\int_0^t 49\\big(1-e^{-u/5}\\big)\\,du\n=49t+245\\big(e^{-t/5}-1\\big).\n\\]\nEvaluate at \\(t=5\\ln 50\\). Since \\(e^{-t/5}=e^{-\\ln 50}=1/50=0.02\\),\n\\[\ns=49(5\\ln 50)+245(0.02-1)=245\\ln 50-240.1.\n\\]\nNumerically,\n\\[\n\\boxed{\\,s\\approx 718.34\\ \\text{m}\\,.}\n\\]\n\nSummary:\n- Time to 98% of terminal speed: \\(t=5\\ln 50\\approx 19.56\\) s.\n- Distance fallen in that time: \\(s=245\\ln 50-240.1\\approx 718.34\\) m.",
+      "images": [
+        "problems/images/boyce 1.2-8.png"
+      ],
+      "context_from": []
+    },
+    "1.2-9": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 9,
+        "images": [
+          "problems/images/boyce 1.2-9.png"
+        ],
+        "predecessors": [],
+        "external_refs": [
+          "1.1-21"
+        ]
+      },
+      "solution_markdown": "We assume the object of mass m = 10 kg falls vertically downward under gravity (g = 9.8 m/s^2) with a quadratic drag force whose magnitude is k v^2 and whose direction is opposite the velocity. Taking v(t) ≥ 0 as the downward speed, Newton’s 2nd law gives\nm dv/dt = mg − k v^2.    (1)\n\na) Limiting velocity Vlim (terminal speed) satisfies mg − k Vlim^2 = 0, so Vlim = sqrt(mg/k). We are told Vlim = 49 m/s, hence\nk = mg / 49^2 = (10·9.8)/2401 = 98/2401 = 2/49 ≈ 0.0408163 (N·s^2/m^2).\n\nDivide (1) by m to write the ODE for v:\ndv/dt = g − (k/m) v^2.\nCompute k/m = (2/49)/10 = 2/490 = 1/245. Using g = 9.8 = 49/5, we rewrite\ndv/dt = 9.8 − (1/245) v^2 = (1/245)(49^2 − v^2),\nwhich is the required form.\n\nb) Solve dv/dt = (1/245)(49^2 − v^2) with v(0)=0. Separate variables:\n∫ dv/(49^2 − v^2) = ∫ (1/245) dt.\n\nUse the standard integral ∫ dv/(a^2 − v^2) = (1/(2a)) ln((a+v)/(a−v)) + C with a = 49:\n(1/98) ln((49+v)/(49−v)) = (1/245) t + C.\n\nApply v(0)=0 ⇒ left side = 0 at t=0, so C = 0. Multiply both sides by 98:\nln((49+v)/(49−v)) = (98/245) t = (2/5) t.\n\nExponentiate and solve for v:\n(49+v)/(49−v) = e^{(2/5)t} ⇒ v = 49 (e^{(2/5)t} − 1)/(e^{(2/5)t} + 1).\n\nRecognize the hyperbolic tangent:\nv(t) = 49 tanh(t/5).\n\nThis satisfies v(0)=0 and lim_{t→∞} v(t)=49.\n\nc) (Plot / comparison) The linear-drag solution from Example 2 (m dv/dt = mg − c v, with same Vlim = 49) is\nv_lin(t) = 49(1 − e^{-0.2 t})\nbecause c = mg/49 = 98/49 = 2, so c/m = 0.2.\n\nComparison (qualitative):\n- Both start with the same initial slope dv/dt|_{t=0} = g = 9.8 m/s^2.\n- For small t the quadratic-drag solution v(t)=49 tanh(t/5) is slightly larger than the linear-drag v_lin(t), because quadratic drag is much weaker at low speeds (drag ∝ v^2 vs v). Example: at t = 1 s, v_quad ≈ 9.67 m/s while v_lin ≈ 8.88 m/s.\n- Both approach the same terminal speed 49 m/s, but the approach shapes differ: v_lin approaches exponentially, v_quad approaches as a tanh; the quadratic case has smaller curvature near zero (no quadratic term) so it accelerates a bit more initially.\n\nd) (Interpretation) Thus quadratic drag is less effective at small speeds (so the body gains speed faster initially) but becomes stronger at higher speeds; linear drag has a consistent damping proportional to speed. Both limit to the same terminal velocity here.\n\ne) Distance x(t). Integrate v(t):\nx'(t) = v(t) = 49 tanh(t/5). With x(0)=0,\nx(t) = 49 ∫ tanh(t/5) dt = 49 · 5 · ln(cosh(t/5)) + C = 245 ln(cosh(t/5)).\nWith x(0)=0 we have C = 0, so\nx(t) = 245 ln(cosh(t/5)).\n\n(For reference, the linear-drag displacement is x_lin(t) = 49 t − 245(1 − e^{-0.2 t}).)\n\nf) Time T to fall 300 m: solve 245 ln(cosh(T/5)) = 300.\nln(cosh(T/5)) = 300/245 = 60/49 ≈ 1.2244898.\ncosh(T/5) = e^{60/49}.\n\nThus\nT/5 = arccosh(e^{60/49}) = ln( e^{60/49} + sqrt(e^{2·60/49} − 1) ).\n\nNumerically,\ncosh(T/5) ≈ e^{1.22449} ≈ 3.402 ⇒ T/5 ≈ arccosh(3.402) ≈ 1.895 ⇒\nT ≈ 5·1.895 ≈ 9.48 s.\n\nSo it takes about 9.48 s to fall 300 m with the quadratic drag model.\n\nSummary of key formulas:\n- k = 2/49 ≈ 0.0408163 (N·s^2/m^2)\n- ODE: dv/dt = (1/245)(49^2 − v^2)\n- v(t) = 49 tanh(t/5)\n- x(t) = 245 ln(cosh(t/5))\n- Time to fall 300 m: T ≈ 9.48 s.",
+      "images": [
+        "problems/images/boyce 1.2-9.png"
+      ],
+      "context_from": [
+        "1.1-21 (reference)"
+      ]
+    },
+    "1.2-10": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 10,
+        "images": [
+          "problems/images/boyce 1.2-10.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the differential equation for exponential decay\n$$\\frac{dQ}{dt}=-rQ,\\qquad r>0,$$\nwhere $Q(t)$ is the amount (mg) at time $t$ (weeks).\n\n1. Solve the differential equation (general solution).\n\nSeparate variables and integrate:\n$$\\frac{dQ}{Q}=-r\\,dt \\quad\\Rightarrow\\quad \\ln|Q|=-rt+C.$$\nExponentiating,\n$$Q(t)=Ce^{-rt}.$$\nUsing the initial amount $Q(0)=100\\,$mg gives $C=100$, so the solution is\n$$Q(t)=100e^{-rt}.$$\n\na. Find the decay rate $r$ given $Q(1)=82.04$ mg.\n\nPlug $t=1$ into $Q(t)$:\n$$82.04=100e^{-r\\cdot 1}\\quad\\Rightarrow\\quad e^{-r}=0.8204.$$\nTake natural log:\n$$-r=\\ln(0.8204)\\quad\\Rightarrow\\quad r=-\\ln(0.8204)\\approx 0.1987\\ \\text{week}^{-1}.$$\n\nb. Expression for the amount at any time $t$.\n\nUsing the value of $r$,\n$$Q(t)=100e^{-rt}=100e^{-0.198718\\;t}\\ \\text{mg}\\approx 100e^{-0.1987t}\\ \\text{mg}.$$\n(Or leave it symbolically as $Q(t)=100e^{-rt}$.)\n\nc. Time required to decay to one-half the original amount (half-life).\n\nSet $Q(T)=50$ and solve:\n$$50=100e^{-rT}\\Rightarrow e^{-rT}=\\tfrac12\\Rightarrow -rT=\\ln(\\tfrac12)=-\\ln 2.$$\nHence\n$$T=\\frac{\\ln 2}{r}\\approx\\frac{0.693147}{0.198718}\\approx 3.49\\ \\text{weeks}.$$\n\nSummary:\n- Decay rate $r\\approx0.1987\\ \\text{week}^{-1}$.\n- $Q(t)=100e^{-0.1987t}$ mg.\n- Half-life $T\\approx3.49$ weeks.",
+      "images": [
+        "problems/images/boyce 1.2-10.png"
+      ],
+      "context_from": []
+    },
+    "1.2-11": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 11,
+        "images": [
+          "problems/images/boyce 1.2-11.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the decay model\n\\[\n\\frac{dQ}{dt}=-rQ,\n\\]\nwhere \\(Q(t)\\) is the amount at time \\(t\\) and \\(r>0\\) is the decay rate. Assume an initial amount \\(Q(0)=Q_0>0\\).\n\n1. Solve the differential equation by separation of variables:\n\\[\n\\frac{dQ}{Q}=-r\\,dt.\n\\]\nIntegrate both sides:\n\\[\n\\int\\frac{dQ}{Q}=\\int -r\\,dt \\quad\\Longrightarrow\\quad \\ln|Q|=-rt+C.\n\\]\nBecause \\(Q>0\\), drop the absolute value and exponentiate:\n\\[\nQ(t)=e^C e^{-rt}=Q_0e^{-rt}.\n\\]\n\n2. Define the half-life \\(\\tau\\) as the time such that \\(Q(\\tau)=\\tfrac12Q_0\\). Substitute into the solution:\n\\[\n\\frac{1}{2}Q_0=Q_0e^{-r\\tau}.\n\\]\nDivide by \\(Q_0\\) and take natural logs:\n\\[\n\\frac{1}{2}=e^{-r\\tau}\\quad\\Longrightarrow\\quad \\ln\\!\\left(\\frac{1}{2}\\right)=-r\\tau.\n\\]\nSince \\(\\ln(1/2)=-\\ln 2\\), this gives\n\\[\n-r\\tau=-\\ln 2\\quad\\Longrightarrow\\quad r\\tau=\\ln 2.\n\\]\n\nThus the decay rate \\(r\\) and the half-life \\(\\tau\\) satisfy \\(r\\tau=\\ln 2\\), or equivalently \\(\\tau=\\dfrac{\\ln 2}{r}\\). (Units: if \\(t\\) is in years then \\(r\\) has units year\\(^{-1}\\).)",
+      "images": [
+        "problems/images/boyce 1.2-11.png"
+      ],
+      "context_from": []
+    },
+    "1.2-12": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 12,
+        "images": [
+          "problems/images/boyce 1.2-12.png"
+        ],
+        "predecessors": [],
+        "external_refs": [
+          "1.1-19"
+        ]
+      },
+      "solution_markdown": "We are given the ODE (Newton’s law of cooling)\n\\[\n\\frac{du}{dt}=-k(u-T),\n\\]\nwhere \\(T\\) (ambient temperature) and \\(k>0\\) are constants, and \\(u(0)=u_0\\).\n\na) Solve for \\(u(t)\\).\n\nAssume \\(u(t)\\) is not identically equal to \\(T\\) (the constant solution \\(u\\equiv T\\) will be noted separately). Separate variables:\n\\[\n\\frac{du}{u-T}=-k\\,dt.\n\\]\nIntegrate both sides:\n\\[\n\\int\\frac{du}{u-T}=\\int -k\\,dt \\quad\\Rightarrow\\quad \\ln|u-T|=-kt+C,\n\\]\nfor some constant \\(C\\). Exponentiate:\n\\[\n|u-T|=e^{C}e^{-kt}.\n\\]\nAbsorb the sign into a constant \\(A=\\pm e^{C}\\) to get\n\\[\nu-T = A e^{-kt}.\n\\]\nUse the initial condition \\(u(0)=u_0\\) to find \\(A\\):\n\\[\nu_0-T = A e^{0}=A \\quad\\Rightarrow\\quad A=u_0-T.\n\\]\nHence the solution is\n\\[\n\\boxed{\\,u(t)=T+(u_0-T)e^{-kt}\\,}\n\\]\n(for the special case \\(u_0=T\\) this gives \\(u(t)=T\\) as expected).\n\nb) Let \\(\\tau\\) be the time at which the initial temperature difference \\(u_0-T\\) has been reduced by half. That means\n\\[\nu(\\tau)-T=\\frac{1}{2}(u_0-T).\n\\]\nUsing the solution,\n\\[\n(u_0-T)e^{-k\\tau}=\\frac{1}{2}(u_0-T).\n\\]\nIf \\(u_0\\neq T\\) we may cancel \\(u_0-T\\) to get\n\\[\ne^{-k\\tau}=\\tfrac12 \\quad\\Rightarrow\\quad -k\\tau=\\ln\\frac12=-\\ln 2.\n\\]\nThus\n\\[\n\\boxed{\\,k\\tau=\\ln 2\\quad\\text{or}\\quad \\tau=\\frac{\\ln 2}{k}\\,}\n\\]\n(or equivalently \\(k=\\dfrac{\\ln 2}{\\tau}\\)). (If \\(u_0=T\\) the difference is zero already and the “half-reduction” is trivial/degenerate.)",
+      "images": [
+        "problems/images/boyce 1.2-12.png"
+      ],
+      "context_from": [
+        "1.1-19 (reference)"
+      ]
+    },
+    "1.2-13": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 13,
+        "images": [
+          "problems/images/boyce 1.2-13-1.png",
+          "problems/images/boyce 1.2-13-2.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "We are given the first-order linear ODE for the charge Q(t) on the capacitor:\n\\[\nR\\frac{dQ}{dt}+\\frac{Q}{C}=V,\n\\]\nwhere R, C, V are constants (R>0, C>0). We solve parts (a)–(c) step by step.\n\nCommon rewriting and definitions\n- Divide by R to put in standard linear form:\n  \\[\n  \\frac{dQ}{dt}+\\frac{1}{RC}\\,Q=\\frac{V}{R}.\n  \\]\n- Define the time constant \\(\\tau=RC>0\\). Then the equation is\n  \\[\n  \\frac{dQ}{dt}+\\frac{1}{\\tau}Q=\\frac{V}{R}.\n  \\]\n\na) Solve with initial condition \\(Q(0)=0\\).\n\nThis is a linear ODE. Use an integrating factor \\(\\mu(t)=e^{\\int (1/\\tau)\\,dt}=e^{t/\\tau}\\).\nMultiply the ODE by \\(\\mu(t)\\):\n\\[\ne^{t/\\tau}\\frac{dQ}{dt}+\\frac{1}{\\tau}e^{t/\\tau}Q=\\frac{V}{R}e^{t/\\tau}\n\\quad\\Longrightarrow\\quad\n\\frac{d}{dt}\\big(e^{t/\\tau}Q\\big)=\\frac{V}{R}e^{t/\\tau}.\n\\]\nIntegrate both sides from 0 to t:\n\\[\ne^{t/\\tau}Q(t)-e^{0}Q(0)=\\frac{V}{R}\\int_0^t e^{s/\\tau}\\,ds\n= \\frac{V}{R}\\,\\tau\\big(e^{t/\\tau}-1\\big).\n\\]\nUse \\(Q(0)=0\\) and solve for Q(t):\n\\[\ne^{t/\\tau}Q(t)=\\frac{V\\tau}{R}\\big(e^{t/\\tau}-1\\big)\n\\quad\\Rightarrow\\quad\nQ(t)=\\frac{V\\tau}{R}\\Big(1-e^{-t/\\tau}\\Big).\n\\]\nBut \\(\\tau=RC\\), so \\(\\dfrac{V\\tau}{R}=VC\\). Hence\n\\[\n\\boxed{\\,Q(t)=CV\\big(1-e^{-t/(RC)}\\big)\\, .}\n\\]\n\nGraph description: Q(t) rises monotonically from 0 at t=0 toward the horizontal asymptote \\(Q=CV\\). The approach is exponential with time constant \\(\\tau=RC\\): after time \\(t=\\tau\\), \\(Q(\\tau)=CV(1-e^{-1})\\approx0.632CV\\). The initial slope is \\(\\dot Q(0)=V/R\\).\n\nb) Limiting value \\(Q_L\\).\n\nTake the limit as \\(t\\to\\infty\\) in the expression above:\n\\[\n\\boxed{\\,Q_L=\\lim_{t\\to\\infty}Q(t)=CV\\, .}\n\\]\n\nc) Suppose at \\(t=t_1\\) the capacitor has charge \\(Q(t_1)=Q_L=CV\\). The battery is removed and the circuit is closed (capacitor discharges through R). The governing equation without the battery is\n\\[\nR\\frac{dQ}{dt}+\\frac{Q}{C}=0,\n\\]\nor \\(\\dfrac{dQ}{dt}=-\\dfrac{1}{RC}Q\\). This is separable (or homogeneous linear); solve with initial condition \\(Q(t_1)=CV\\):\n\\[\n\\frac{dQ}{Q}=-\\frac{dt}{RC}\\quad\\Longrightarrow\\quad\n\\ln Q=-\\frac{t}{RC}+{\\rm const}.\n\\]\nApplying \\(Q(t_1)=CV\\) gives the constant and hence for \\(t\\ge t_1\\):\n\\[\nQ(t)=CV\\,e^{-(t-t_1)/(RC)}.\n\\]\nThus\n\\[\n\\boxed{\\,Q(t)=CV\\exp\\big(-\\tfrac{t-t_1}{RC}\\big)\\quad\\text{for }t>t_1\\, .}\n\\]\n\nGraph description: for \\(t>t_1\\) the charge decays exponentially from \\(CV\\) at \\(t_1\\) to 0, with the same time constant \\(\\tau=RC\\). The initial decay rate at \\(t_1\\) is \\(\\dot Q(t_1)=-V/R\\), symmetric in magnitude to the initial charging rate.",
+      "images": [
+        "problems/images/boyce 1.2-13-1.png",
+        "problems/images/boyce 1.2-13-2.png"
+      ],
+      "context_from": []
+    },
+    "1.2-14": {
+      "prompt": {
+        "chapter": "1.2",
+        "problem": 14,
+        "images": [
+          "problems/images/boyce 1.2-14.png"
+        ],
+        "predecessors": [],
+        "external_refs": []
+      },
+      "solution_markdown": "Assumptions and definitions\n- Volume of pond V = 1,000,000 gal (constant because inflow = outflow).\n- Inflow rate = outflow rate = 300 gal/h.\n- Inflow concentration = 0.01 g/gal while source active, then 0 g/gal after removal.\n- Q(t) = amount of chemical in pond (grams) at time t (hours).\n- 1 year = 365 days = 8760 hours.\n\na) Write the IVP\nRate in = (0.01 g/gal)(300 gal/h) = 3 g/h.\nConcentration in pond = Q(t)/1,000,000 (g/gal), so rate out = (Q/1,000,000)(300) = (300/1,000,000)Q = 0.0003 Q (g/h).\n\nThus while the source is active (t ≥ 0, until 1 year),\ndQ/dt = 3 − 0.0003 Q,  with Q(0) = 0.\n\nb) Solve the IVP and chemical after 1 year\nThis is linear first-order. The equilibrium (particular) solution is Q∞ = 3/0.0003 = 10,000 g.\nSolving with Q(0)=0 gives\nQ(t) = 10,000(1 − e^{-0.0003 t}),  for 0 ≤ t ≤ 8760.\n\nAfter 1 year (t = 8760 h),\nQ(8760) = 10,000(1 − e^{-0.0003·8760}) = 10,000(1 − e^{-2.628}) ≈ 9,276 g (approx).\n\nc) New IVP after source removal\nAt t = 8760 h the source is removed, so inflow concentration = 0 and the ODE becomes pure decay:\ndQ/dt = −0.0003 Q,  for t ≥ 8760,\nwith initial condition Q(8760) = 10,000(1 − e^{-2.628}) ≈ 9,275.91 g.\n\n(You may equivalently introduce s = t − 8760 as time since removal and write dQ/ds = −0.0003 Q, Q(0)=9,275.91.)\n\nd) Solve the new IVP and chemical after one additional year (2 years from start)\nSolution for t ≥ 8760:\nQ(t) = Q(8760) e^{-0.0003 (t − 8760)} = 10,000(1 − e^{-2.628}) e^{-0.0003 (t − 8760)}.\n\nAfter one additional year (t = 17520 h),\nQ(17520) = 10,000(1 − e^{-2.628}) e^{-0.0003·8760}\n= 10,000(1 − e^{-2.628}) e^{-2.628}\n≈ 9,275.91 · e^{-2.628} ≈ 671.5 g (approx).\n\ne) Time to reduce Q(t) to 10 g\nInterpretation: time from the beginning until Q(t) = 10 g (piecewise function applies). Because the source is removed at t = 8760 h, the time to reach 10 g is found in the decay phase (t ≥ 8760).\n\nSolve for t ≥ 8760:\nQ(t) = Q(8760) e^{-0.0003 (t − 8760)} = 10.\n=> e^{-0.0003 (t − 8760)} = 10 / Q(8760).\n=> t − 8760 = (1/0.0003) ln( Q(8760)/10 ).\n\nUsing Q(8760) = 10,000(1 − e^{-2.628}) ≈ 9,275.91,\nt − 8760 ≈ (1/0.0003) ln(9275.91/10) ≈ 22,772.5 hours ≈ 2.599 years.\n\nSo total time from the start:\nt ≈ 8760 + 22,772.5 ≈ 31,532.5 hours ≈ 3.600 years.\n\n(If one instead asked how long during the filling phase Q first reaches 10 g, that occurs very quickly: solving 10 = 10,000(1 − e^{-0.0003 t}) gives t ≈ 3.34 hours.)\n\nf) Plot Q(t) versus t for 3 years\nPiecewise formula to plot for 0 ≤ t ≤ 3 years (0 ≤ t ≤ 26280 h):\n\n- For 0 ≤ t ≤ 8760:\n  Q(t) = 10,000(1 − e^{-0.0003 t}).\n\n- For 8760 ≤ t ≤ 26280:\n  Q(t) = 10,000(1 − e^{-2.628}) e^{-0.0003 (t − 8760)}.\n\nKey numeric points:\n- Q(0) = 0 g\n- Q(1 year = 8760 h) ≈ 9,276 g\n- Q(2 years = 17,520 h) ≈ 671.5 g\n- Q(3 years = 26,280 h) ≈ 48.3 g\n\nTo produce the plot (example Python/matplotlib):\n- t in hours from 0 to 26280; evaluate the piecewise formulas above and plot t/8760 on x-axis to show years, Q(t) on y-axis.\n\nSummary (compact)\n- Phase I (0 ≤ t ≤ 8760): Q(t) = 10,000(1 − e^{-0.0003 t}), Q(8760) ≈ 9,276 g.\n- Phase II (t ≥ 8760): Q(t) = 9,275.91 e^{-0.0003 (t − 8760)}.\n- After 2 years: ≈ 671.5 g. After 3 years: ≈ 48.3 g.\n- Time until Q = 10 g ≈ 31,533 hours ≈ 3.600 years from start (≈ 2.599 years after removal).",
+      "images": [
+        "problems/images/boyce 1.2-14.png"
+      ],
+      "context_from": []
+    }
+  }
+}
