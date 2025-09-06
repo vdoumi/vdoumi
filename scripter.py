@@ -10,8 +10,11 @@ Usage
   python scripter.py \
     --solutions out/solutions/solutions-1.2.json \
     --outdir out/scripts \
-    --model gpt-4o-mini \
-    --max-retries 8 \
+    --model gpt-5-mini \
+    --min-seconds 90 \
+    --max-seconds 600 \
+    --seconds-per-1kchars 150 \
+    --max-retries 10 \
     --backoff 1.6 \
     --verbose
 
@@ -133,24 +136,21 @@ def _estimate_target_seconds(solution_markdown: str, min_s: int, max_s: int, per
   est = int((n / 1000.0) * per_1k)
   return max(min_s, min(max_s, est))
 
-def _build_prompt(chapter: str, problems: Dict[str, dict]) -> List[dict]:
-  """
-  Build a single combined prompt to convert per-problem solutions into a slide-centric plan.
-  STRICT JSON schema required (see module docstring). Narration is attached to each slide.
-  """
+
+def _build_prompt_for_problem(chapter: str, prob_key: str, meta: dict, target_seconds: int) -> List[dict]:
+  sol = (meta.get("solution_markdown","") or "").strip()
   sys_text = (
-    "You are a lecture scriptwriter for an educational VTuber. Convert formal math solutions into a SLIDE‑CENTRIC "
-    "lecture plan in Korean (존댓말) where each slide bundles: (1) MARP Markdown for the slide, "
-    "(2) narration lines with gestures spoken while the slide is on screen, and (3) optional Manim blocks to overlay.\n"
-    "OUTPUT STRICT JSON ONLY (no code fences, no markdown outside strings), escaped properly.\n\n"
+    "You are a lecture scriptwriter for an educational VTuber. Produce a SLIDE‑CENTRIC plan in Korean (존댓말) "
+    "for ONE problem only, bundling per slide: MARP Markdown, narration (with gestures), and optional Manim blocks.\n"
+    "OUTPUT STRICT JSON ONLY (no code fences), escaped properly.\n\n"
     "Return JSON that matches this schema EXACTLY:\n"
     "{\n"
     f"  \"schema_version\": \"{SCHEMA_VERSION}\",\n"
     "  \"chapter\": string,\n"
     "  \"slides\": [\n"
     "    {\n"
-    "      \"id\": string,                              // e.g., \"intro-1\", \"p5-1\", \"p5-2\", \"outro-1\"\n"
-    "      \"problem\": string|null,                    // e.g., \"1.2-5\" or null for intro/outro\n"
+    "      \"id\": string,                              // e.g., \"p5-1\", \"p5-2\"\n"
+    "      \"problem\": string,                         // MUST be the current problem key (e.g., \"1.2-5\")\n"
     "      \"role\": \"statement\"|\"derivation\"|\"result\"|\"review\"|\"ref\"|null,\n"
     "      \"marp_md\": string,                         // FULL MARP slide markdown; MUST start with \"---\\n\"\n"
     "      \"narration\": [                             // spoken while THIS slide is visible\n"
@@ -174,39 +174,13 @@ def _build_prompt(chapter: str, problems: Dict[str, dict]) -> List[dict]:
     "Rules:\n"
     f"- Gesture tags must be chosen only from: {ALLOWED_GESTURES}.\n"
     "- Use multiple equations per slide when needed to show step transitions; do NOT split every equation into a new slide.\n"
-    "- Provide 2–4 slides per problem: statement → key derivations → final answer (with LaTeX \\\\boxed{...}).\n"
+    "- Every marp_md MUST begin with ---\\n. If not, the output will be invalid.\n"
+	"- Never omit the leading slide delimiter.\n"
+    "- Provide 2–6 slides depending on complexity; always include a final ANSWER slide with LaTeX \\\\boxed{...}.\n"
     "- For Manim blocks, use MathTex to render important formulas so equations are visible on screen even if graphics are shown.\n"
     "- Keep narration concise, natural Korean, referencing what is on the slide (avoid essay tone).\n"
-    "- Always include a final ANSWER slide per problem with key result highlighted.\n"
-    "- Escape ALL backslashes in LaTeX (e.g., \\\\frac, \\\\boxed) and newlines as \\\\n inside JSON strings."
-  )
-
-  # Flatten problems as text blocks (to inform the model).
-  blocks: List[str] = []
-  for key, meta in problems.items():
-    sol = (meta.get('solution_markdown','') or '').strip()
-    blocks.append(f"""### {key}
-{sol}
-""")
-
-  user_text = (
-    f"Chapter {chapter}. Here are the solved problems in order. "
-    "Produce ONLY the JSON plan as per the slide-centric schema.\n\n" + "\n\n".join(blocks)
-  )
-
-  return [
-    {"role": "system", "content": [{"type": "text", "text": sys_text}]},
-    {"role": "user", "content": [{"type": "text", "text": user_text}]},
-  ]
-
-def _build_prompt_for_problem(chapter: str, prob_key: str, meta: dict, target_seconds: int) -> List[dict]:
-  sol = (meta.get("solution_markdown","") or "").strip()
-  sys_text = (
-    "You are a lecture scriptwriter for an educational VTuber. Produce a SLIDE‑CENTRIC plan in Korean (존댓말) "
-    "for ONE problem only, bundling per slide: MARP Markdown, narration (with gestures), and optional Manim blocks.\n"
-    "OUTPUT STRICT JSON ONLY (no code fences), escaped properly. Follow EXACT schema and constraints from previous instructions.\n"
-    f"Target total narration time for this problem: ~{target_seconds} seconds. "
-    "Prefer 2–6 slides depending on complexity; allow more if necessary to meet clarity and time."
+    "- Escape ALL backslashes in LaTeX (e.g., \\\\frac, \\\\boxed) and newlines as \\\\n inside JSON strings.\n"
+    f"- Target total narration time for THIS problem: ~{target_seconds} seconds (use optional duration_sec to help meet target)."
   )
   user_text = (
     f"Chapter {chapter}, Problem {prob_key}. Here is the solved solution text:\n\n{sol}\n\n"
@@ -326,8 +300,10 @@ def _call_openai(messages: List[dict], model: str, max_retries: int, backoff: fl
         "model": model,
         "messages": messages,
         "response_format": {"type": "json_object"},
-        "temperature": 0.2,
       }
+      # temperature 지원 여부에 따라만 추가
+      if not model.startswith("gpt-5-mini"):
+        kwargs["temperature"] = 0.2
       resp = client.chat.completions.create(**kwargs)
       content = (resp.choices[0].message.content or "").strip()
       plan = _parse_json_lenient(content)
@@ -362,33 +338,31 @@ def make_script(
   chapter = data.get("chapter") or "?"
   problems: Dict[str, dict] = data.get("problems", {})
   _log(f"Loaded {len(problems)} solved problems for chapter {chapter}")
-  _log(f"Mode: {'per-problem' if getattr(sys.modules[__name__], 'ARGS_PER_PROBLEM', False) else 'batch'}; duration targeting: min={getattr(sys.modules[__name__], 'ARGS_MIN_SECONDS', 60)}s, max={getattr(sys.modules[__name__], 'ARGS_MAX_SECONDS', 600)}s, scale={getattr(sys.modules[__name__], 'ARGS_SECONDS_PER_1K', 120)}/1k chars")
+  _log(f"Mode: per-problem; duration targeting: min={getattr(sys.modules[__name__], 'ARGS_MIN_SECONDS', 60)}s, max={getattr(sys.modules[__name__], 'ARGS_MAX_SECONDS', 600)}s, scale={getattr(sys.modules[__name__], 'ARGS_SECONDS_PER_1K', 120)}/1k chars")
 
-  use_per_problem = getattr(sys.modules[__name__], "ARGS_PER_PROBLEM", False)  # patched below
-  if use_per_problem:
-    plans = []
-    for idx, (k, meta) in enumerate(problems.items(), start=1):
-      tgt = _estimate_target_seconds(
-        meta.get("solution_markdown",""),
-        min_s=getattr(sys.modules[__name__], "ARGS_MIN_SECONDS", 60),
-        max_s=getattr(sys.modules[__name__], "ARGS_MAX_SECONDS", 600),
-        per_1k=getattr(sys.modules[__name__], "ARGS_SECONDS_PER_1K", 120)
-      )
-      _log(f"[{idx}/{len(problems)}] Building plan for problem {k} (target ~{tgt}s)...")
-      messages = _build_prompt_for_problem(chapter, k, meta, tgt)
-      plan_piece = _call_openai(messages, model=model, max_retries=max_retries, backoff=backoff)
-      # validate each piece
-      if plan_piece.get("chapter") != chapter:
-        plan_piece["chapter"] = chapter
-      _validate_plan(plan_piece)
-      plans.append(plan_piece)
-    plan = _merge_plans(plans, chapter)
-  else:
-    messages = _build_prompt(chapter, problems)
-    _log(f"Requesting lecture plan from model for {len(problems)} problems...")
-    plan = _call_openai(messages, model=model, max_retries=max_retries, backoff=backoff)
-    _validate_plan(plan)
-    plan.setdefault("chapter", chapter)
+  plans = []
+  for idx, (k, meta) in enumerate(problems.items(), start=1):
+    tgt = _estimate_target_seconds(
+      meta.get("solution_markdown",""),
+      min_s=getattr(sys.modules[__name__], "ARGS_MIN_SECONDS", 60),
+      max_s=getattr(sys.modules[__name__], "ARGS_MAX_SECONDS", 600),
+      per_1k=getattr(sys.modules[__name__], "ARGS_SECONDS_PER_1K", 120)
+    )
+    _log(f"[{idx}/{len(problems)}] Building plan for problem {k} (target ~{tgt}s)...")
+    messages = _build_prompt_for_problem(chapter, k, meta, tgt)
+    plan_piece = _call_openai(messages, model=model, max_retries=max_retries, backoff=backoff)
+    # enforce current problem on slides and validate
+    for s in plan_piece.get("slides", []) or []:
+      if s.get("problem") in (None, "", "null"):
+        s["problem"] = k
+    if plan_piece.get("chapter") != chapter:
+      plan_piece["chapter"] = chapter
+    for s in plan_piece.get("slides", []):
+      if isinstance(s.get("marp_md"), str) and not s["marp_md"].startswith("---\n"):
+        s["marp_md"] = "---\n" + s["marp_md"].lstrip()
+    _validate_plan(plan_piece)
+    plans.append(plan_piece)
+  plan = _merge_plans(plans, chapter)
   if plan.get("schema_version") != SCHEMA_VERSION:
     plan["schema_version"] = SCHEMA_VERSION
   _log(f"Parsed plan with {len(plan.get('slides', []) or [])} slides.")
@@ -419,7 +393,6 @@ def _parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
   p.add_argument("--max-retries", type=int, default=8)
   p.add_argument("--backoff", type=float, default=1.6)
   p.add_argument("--verbose", action="store_true")
-  p.add_argument("--per-problem", action="store_true", help="Call the model once per problem and stitch slides.")
   p.add_argument("--min-seconds", type=int, default=60, help="Minimum target narration duration per problem (seconds).")
   p.add_argument("--max-seconds", type=int, default=600, help="Maximum target narration duration per problem (seconds).")
   p.add_argument("--seconds-per-1kchars", type=int, default=120, help="Scale seconds by solution length: target ~= min(max(min_seconds, len_chars/1000 * seconds_per_1kchars), max_seconds).")
@@ -428,7 +401,6 @@ def _parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
 if __name__ == "__main__":
   args = _parse_args()
   # Set module globals for helpers
-  ARGS_PER_PROBLEM = args.per_problem
   ARGS_MIN_SECONDS = args.min_seconds
   ARGS_MAX_SECONDS = args.max_seconds
   ARGS_SECONDS_PER_1K = args.seconds_per_1kchars

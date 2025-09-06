@@ -22,20 +22,77 @@ dependencies:
   - xz=5.6.4=h80987f9_1
   - zlib=1.2.13=h18a0788_1
   - pip:
+      - addict==2.4.0
       - annotated-types==0.7.0
       - anyio==4.10.0
+      - appdirs==1.4.4
+      - asttokens==3.0.0
       - certifi==2025.8.3
+      - colour==0.1.5
+      - contourpy==1.3.3
+      - cycler==0.12.1
+      - cython==3.1.3
+      - decorator==5.2.1
+      - diskcache==5.6.3
       - distro==1.9.0
+      - executing==2.2.1
+      - fonttools==4.59.2
+      - glcontext==3.0.0
       - h11==0.16.0
       - httpcore==1.0.9
       - httpx==0.28.1
       - idna==3.10
+      - ipython==9.5.0
+      - ipython-pygments-lexers==1.1.1
+      - isosurfaces==0.1.2
+      - jedi==0.19.2
       - jiter==0.10.0
+      - kiwisolver==1.4.9
+      - manimgl==1.7.2
+      - manimpango==0.6.0
+      - mapbox-earcut==1.0.3
+      - markdown-it-py==4.0.0
+      - matplotlib==3.10.6
+      - matplotlib-inline==0.1.7
+      - mdurl==0.1.2
+      - moderngl==5.12.0
+      - moderngl-window==3.1.1
+      - mpmath==1.3.0
+      - numpy==2.3.2
       - openai==1.106.1
+      - packaging==25.0
+      - parso==0.8.5
+      - pexpect==4.9.0
+      - pillow==11.3.0
+      - prompt-toolkit==3.0.52
+      - ptyprocess==0.7.0
+      - pure-eval==0.2.3
       - pydantic==2.11.7
       - pydantic-core==2.33.2
+      - pydub==0.25.1
+      - pyglet==2.1.8
+      - pyglm==2.8.2
+      - pygments==2.19.2
+      - pyobjc-core==11.1
+      - pyobjc-framework-cocoa==11.1
+      - pyopengl==3.1.10
+      - pyparsing==3.2.3
+      - pyperclip==1.9.0
+      - python-dateutil==2.9.0.post0
+      - pyyaml==6.0.2
+      - rich==14.1.0
+      - scipy==1.16.1
+      - screeninfo==0.8.1
+      - six==1.17.0
+      - skia-pathops==0.8.0.post2
       - sniffio==1.3.1
+      - stack-data==0.6.3
+      - svgelements==1.9.6
+      - sympy==1.14.0
       - tqdm==4.67.1
+      - traitlets==5.14.3
       - typing-extensions==4.15.0
       - typing-inspection==0.4.1
+      - validators==0.35.0
+      - wcwidth==0.2.13
 prefix: /opt/anaconda3/envs/vdoumi
