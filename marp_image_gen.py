@@ -2,7 +2,7 @@ import subprocess
 import os
 import re
 
-def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
+def edit_marp_md(filepath='out/scripts/slides-1.99.md'):
     r"""
     Normalize MARP markdown:
     - Keep LaTeX intact; convert \( \) → $...$ (inline), \[ \] → $$...$$ (block).
@@ -131,6 +131,7 @@ def edit_marp_md(filepath='out/scripts/slides-1.2.md'):
     # 7) Split any slide that has more than 8 NON-EMPTY lines (to avoid overflow).
     #    Blank lines are preserved but do not count toward the limit.
     def _split_long_slide(block: str, title_suffix_idx: int = 1) -> list[str]:
+        return [block]
         r"""
         Split a slide into chunks with at most 8 NON-EMPTY lines each.
         Blank lines are preserved but do not count toward the limit.
