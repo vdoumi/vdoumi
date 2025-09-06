@@ -1,0 +1,196 @@
+{
+  "problems": [
+    {
+      "number": 1,
+      "images": [
+        "problems/images/boyce 1.2-1.png"
+      ]
+    },
+    {
+      "number": 2,
+      "images": [
+        "problems/images/boyce 1.2-2.png"
+      ]
+    },
+    {
+      "number": 3,
+      "images": [
+        "problems/images/boyce 1.2-3.png"
+      ]
+    },
+    {
+      "number": 4,
+      "images": [
+        "problems/images/boyce 1.2-4.png"
+      ]
+    },
+    {
+      "number": 5,
+      "images": [
+        "problems/images/boyce 1.2-5-1.png",
+        "problems/images/boyce 1.2-5-2.png"
+      ]
+    },
+    {
+      "number": 6,
+      "images": [
+        "problems/images/boyce 1.2-6.png"
+      ]
+    },
+    {
+      "number": 7,
+      "images": [
+        "problems/images/boyce 1.2-7.png"
+      ]
+    },
+    {
+      "number": 8,
+      "images": [
+        "problems/images/boyce 1.2-8.png"
+      ]
+    },
+    {
+      "number": 9,
+      "images": [
+        "problems/images/boyce 1.2-9.png"
+      ]
+    },
+    {
+      "number": 10,
+      "images": [
+        "problems/images/boyce 1.2-10.png"
+      ]
+    },
+    {
+      "number": 11,
+      "images": [
+        "problems/images/boyce 1.2-11.png"
+      ]
+    },
+    {
+      "number": 12,
+      "images": [
+        "problems/images/boyce 1.2-12.png"
+      ]
+    },
+    {
+      "number": 13,
+      "images": [
+        "problems/images/boyce 1.2-13-1.png",
+        "problems/images/boyce 1.2-13-2.png"
+      ]
+    },
+    {
+      "number": 14,
+      "images": [
+        "problems/images/boyce 1.2-14.png"
+      ]
+    }
+  ],
+  "dependencies": {
+    "2": [
+      1
+    ],
+    "6": [
+      5
+    ],
+    "14": [
+      17
+    ]
+  },
+  "bundles": [
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ]
+  ],
+  "external_dependencies": {
+    "9": "1.1-21",
+    "12": "1.1-19"
+  },
+  "video_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "chapter": "1.2",
+  "paired_bundles": [
+    [
+      "1.2-9",
+      "1.1-21"
+    ],
+    [
+      "1.2-12",
+      "1.1-19"
+    ]
+  ],
+  "lecture_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "external_problem_images": {
+    "1.1-21": [
+      "problems/images/boyce 1.1-21.png"
+    ],
+    "1.1-19": [
+      "problems/images/boyce 1.1-19.png"
+    ]
+  }
+}
