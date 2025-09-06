@@ -1,3 +1,4 @@
+### python timeline_controller.py --timeline '[{"gestures": "small-nod", "duration_sec": 10}, {"gestures": "small-nod", "duration_sec": 2}, {"gestures": "think", "duration_sec": 2}, {"gestures": "think", "duration_sec": 2}, {"gestures": "small-nod", "duration_sec": 2}, {"gestures": "think", "duration_sec": 10}]'
 import json
 import socket
 import time
@@ -7,19 +8,6 @@ import random
 import sys
 
 from stabilizer import Stabilizer
-
-# Load the timeline of events from timeline.json
-with open('timeline.json') as f:
-    timeline = json.load(f)
-
-# Load poses from pose.json
-with open('pose.json') as f:
-    poses = json.load(f)
-
-# --- TCP Communication Setup ---
-IP = "127.0.0.1"
-PORT = 5066
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # --- Stabilizer Setup ---
 stabilizers = {
@@ -175,7 +163,7 @@ def animation_thread(duration, pitch_vals, yaw_vals, roll_vals, gesture_duration
         i += 1
         time.sleep(1/60)
 
-def main():
+def main(timeline, poses):
     """Main function to process the timeline."""
     for event in timeline:
         print(f"Processing event: {event}")
@@ -225,5 +213,22 @@ def main():
             # If no gesture, just wait for the duration
             time.sleep(duration)
 
+import argparse
+def _parse_args(argv=None):
+  p = argparse.ArgumentParser(description="Turn solver output into a lecture-style script.")
+  p.add_argument("--timeline", required=True, help="json timeline")
+  return p.parse_args(argv)
+
 if __name__ == "__main__":
-    main()
+    args = _parse_args()
+    timeline = json.loads(args.timeline)
+    
+    # Load the timeline of events from timeline.json
+    # with open('timeline.json') as f:
+    #     timeline = json.load(f)
+
+    # Load poses from pose.json
+    with open('pose.json') as f:
+        poses = json.load(f)
+
+    main(timeline, poses)
