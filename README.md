@@ -19,6 +19,6 @@ I'm Virtual Math Helper, What can I help you?
     - [ ] 페이지를 넘긴 경우 script에 역으로 메모해야 함
   - [ ] Manim과 같은 animation library에 대해서도 적극적인 차용이 필요함.
   - [ ] 손글씨나 펜으로 그림을 그리는 기능까지 있으면... 좋지.
-- [ ] 적절한 TTS API나 오픈소스를 찾아서 음성을 만든다.
-- [ ] audio timeline을 가지고 버튜버를 rendering한다. 
-- [ ] 영상을 생성한다.
+- [X] 적절한 TTS API나 오픈소스를 찾아서 음성을 만든다.
+- [X] audio timeline을 가지고 버튜버를 rendering한다. 
+- [X] 영상을 생성한다.
