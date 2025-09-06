@@ -3,6 +3,7 @@ I'm Virtual Math Helper, What can I help you?
 TODOS
 
 - [ ] 수학 예시 문제를 curating한 후에 pdf/image/latex 의 이해도 정도를 비교한다.
+  - [ ] 여러 number의 수학 문제가 내용이 연결되어 있는 경우를 파악하여 세트로 묶는다. (나중에 한 영상에서 설명할 수 있게)
 - [ ] 문제를 푸는 파이프라인을 설계한다.
 - [ ] 깔끔하게 푼 풀이를 바탕으로 Script를 작성한다.
 - [ ] Script를 바탕으로 PPT와 같은 시각 자료를 생성한다.
