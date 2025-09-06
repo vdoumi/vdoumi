@@ -3,3 +3,4 @@ out/
 __pycache__/
 .idea/
 /node_modules/
+.DS_Store
