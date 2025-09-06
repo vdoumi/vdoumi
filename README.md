@@ -16,6 +16,7 @@ I'm Virtual Math Helper, What can I help you?
 - [X] Script를 바탕으로 PPT 등의 시각 자료를 생성한다.
   - [X] Marp 사용해서 시각 자료 제작
     - [ ] 시각 자료 깨짐 문제 해결
+    - [ ] 페이지를 넘긴 경우 script에 역으로 메모해야 함
   - [ ] Manim과 같은 animation library에 대해서도 적극적인 차용이 필요함.
   - [ ] 손글씨나 펜으로 그림을 그리는 기능까지 있으면... 좋지.
 - [ ] 적절한 TTS API나 오픈소스를 찾아서 음성을 만든다.

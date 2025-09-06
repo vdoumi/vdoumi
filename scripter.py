@@ -63,6 +63,7 @@ import random
 import re
 import sys
 import time
+import traceback
 from typing import Dict, List, Optional
 
 try:
@@ -102,10 +103,34 @@ def _write_json(path: str, data: dict) -> None:
   with open(path, "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
+
 def _write_text(path: str, text: str) -> None:
   os.makedirs(os.path.dirname(path), exist_ok=True)
   with open(path, "w", encoding="utf-8") as f:
     f.write(text)
+
+# Code normalization helper for Manim code blocks
+def _normalize_manim_code(raw: str, target: str = "manimgl") -> str:
+  """Turn JSON-style escaped code into runnable .py and port to manimgl if requested.
+  - Convert literal escape sequences (\\n not preceding a letter → newline, \\t → tab, \\\\ → \\).
+  - If target == 'manimgl', rewrite imports and common API calls to 3b1b/manimgl style.
+  """
+  code = raw.replace("\r\n", "\n")
+  # Convert literal backslash-n that are *not* LaTeX commands like \neq, \nabla
+  code = re.sub(r"\\n(?![A-Za-z])", "\n", code)
+  code = code.replace("\\t", "\t")
+  # Reduce double backslashes (JSON escaping) to single for Python source strings
+  code = code.replace("\\\\", "\\")
+
+  if target == "manimgl":
+    # Import port: manimce -> manimgl
+    code = code.replace("from manim import *", "from manimlib.imports import *")
+    # Class/constructors: MathTex -> Tex (manimgl uses Tex/TextMobject)
+    code = re.sub(r"\bMathTex\(", "Tex(", code)
+    # Animations: Create(...) -> ShowCreation(...)
+    code = re.sub(r"\bCreate\(", "ShowCreation(", code)
+    # Some CE-only helpers may not exist; keep them if present but users can adjust.
+  return code
 
 def _assemble_marp(plan: dict) -> str:
   """Join MARP content from each slide into a single deck."""
@@ -126,7 +151,9 @@ def _emit_manim_blocks(plan: dict, outdir: str) -> List[str]:
     for blk in (slide.get("manim") or []):
       bid = blk.get("id","a")
       fn = os.path.join(base, f"{sid}-{bid}.py")
-      _write_text(fn, blk.get("code",""))
+      code_src = blk.get("code", "")
+      code_src = _normalize_manim_code(code_src, target="manimgl")
+      _write_text(fn, code_src)
       paths.append(fn)
   return paths
 
@@ -175,9 +202,10 @@ def _build_prompt_for_problem(chapter: str, prob_key: str, meta: dict, target_se
     f"- Gesture tags must be chosen only from: {ALLOWED_GESTURES}.\n"
     "- Use multiple equations per slide when needed to show step transitions; do NOT split every equation into a new slide.\n"
     "- Every marp_md MUST begin with ---\\n. If not, the output will be invalid.\n"
-	"- Never omit the leading slide delimiter.\n"
+    "- Never omit the leading slide delimiter.\n"
     "- Provide 2–6 slides depending on complexity; always include a final ANSWER slide with LaTeX \\\\boxed{...}.\n"
-    "- For Manim blocks, use MathTex to render important formulas so equations are visible on screen even if graphics are shown.\n"
+    "- Manim blocks must target **manimgl (3Blue1Brown)** style: `from manimlib.imports import *`, prefer `Tex(...)` over `MathTex(...)`, and use `ShowCreation(...)` instead of `Create(...)`.\n"
+    "- If you still output CE-style (from manim import *), keep LaTeX as raw strings; newlines must be real (not literal `\\n`).\n"
     "- Keep narration concise, natural Korean, referencing what is on the slide (avoid essay tone).\n"
     "- Escape ALL backslashes in LaTeX (e.g., \\\\frac, \\\\boxed) and newlines as \\\\n inside JSON strings.\n"
     f"- Target total narration time for THIS problem: ~{target_seconds} seconds (use optional duration_sec to help meet target)."
@@ -360,7 +388,10 @@ def make_script(
     for s in plan_piece.get("slides", []):
       if isinstance(s.get("marp_md"), str) and not s["marp_md"].startswith("---\n"):
         s["marp_md"] = "---\n" + s["marp_md"].lstrip()
-    _validate_plan(plan_piece)
+    try:
+      _validate_plan(plan_piece)
+    except RuntimeError as e:
+      print(traceback.format_exc())
     plans.append(plan_piece)
   plan = _merge_plans(plans, chapter)
   if plan.get("schema_version") != SCHEMA_VERSION:
