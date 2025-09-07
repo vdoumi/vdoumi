@@ -1,0 +1,30 @@
+{
+  "problems": [
+    {
+      "number": 1,
+      "images": [
+        "problems/images/boyce 1.2-1.png"
+      ]
+    }
+  ],
+  "dependencies": {
+  },
+  "bundles": [
+    [
+      1
+    ]
+  ],
+  "external_dependencies": {
+  },
+  "video_order": [
+    1
+  ],
+  "chapter": "1.99",
+  "paired_bundles": [
+  ],
+  "lecture_order": [
+    1
+  ],
+  "external_problem_images": {
+  }
+}

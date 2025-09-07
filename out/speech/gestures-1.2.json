@@ -1,0 +1,982 @@
+[
+  {
+    "gestures": "point",
+    "duration_sec": 4.104
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.104
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 3.348
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 3.348
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 4.584
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.584
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.132
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.132
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 2.952
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 2.952
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 3.876
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.876
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 3.372
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.372
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 5.076
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 5.076
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.176
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.176
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 6.228
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 6.228
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 4.056
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 4.056
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 3.372
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.372
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.408
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.408
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.852
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 3.852
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.696
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 6.696
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.556
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.556
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 7.824
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.824
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 9.588
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 9.588
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.352
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.352
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 5.352
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.848
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.848
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 8.64
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 8.64
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 6.324
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.324
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 8.016
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 8.016
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 5.676
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.676
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 6.324
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.324
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.584
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.584
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 8.352
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.728
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.728
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 4.344
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 4.344
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.404
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.404
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 6.744
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 5.748
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.748
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 9.288
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.084
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 6.084
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.344
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 4.344
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.528
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 6.528
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 6.0
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.0
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 9.072
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 9.072
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.56
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.56
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 7.164
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.164
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.192
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 6.192
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 7.164
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.164
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.24
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 6.24
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 9.852
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 9.852
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 4.752
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.752
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.392
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.32
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.32
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 3.876
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 3.876
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 13.416
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.0
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.0
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.824
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 8.064
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.092
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.092
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.92
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 10.464
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.86
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.86
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 6.792
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 6.792
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 12.864
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.504
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.504
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.96
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 3.96
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.996
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.996
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.068
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 4.068
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 4.944
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.944
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.304
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.304
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.524
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 4.524
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 6.252
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.252
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.86
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 4.86
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.484
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 5.484
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.512
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 4.512
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.572
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.572
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.8
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 4.8
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 4.848
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.848
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 3.48
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 3.48
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.124
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.124
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.656
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 4.452
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.452
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.104
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 4.104
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.464
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 4.464
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.648
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.648
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 2.928
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 2.928
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.944
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 4.944
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 2.808
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 2.808
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.732
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 3.732
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 10.104
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 10.104
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 8.112
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 8.112
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.956
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.956
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.632
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 7.632
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 6.192
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.192
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 6.192
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.62
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.62
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 7.608
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.608
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 8.472
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 8.472
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.68
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.68
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 9.888
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 9.888
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 5.592
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 5.592
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 4.572
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.572
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 8.772
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 8.772
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.384
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 3.384
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 3.432
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 3.432
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 1.944
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 1.944
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 3.864
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 3.864
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 9.036
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 9.036
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 8.328
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 8.328
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.224
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 4.224
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.944
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 7.176
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.176
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.44
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.44
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 3.732
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.732
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 6.108
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 6.108
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.212
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.212
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 7.992
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.992
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 10.152
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 10.152
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 8.604
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 8.604
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.596
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 7.596
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.404
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.404
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.856
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 5.856
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.588
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 3.588
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 6.072
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.072
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.98
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 7.98
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 7.464
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.332
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 7.332
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 5.604
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 5.604
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 6.492
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 6.492
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 7.656
+  },
+  {
+    "gestures": "write",
+    "duration_sec": 8.052
+  },
+  {
+    "gestures": "think",
+    "duration_sec": 8.052
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 8.016
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 3.564
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 3.564
+  },
+  {
+    "gestures": "emphasize",
+    "duration_sec": 4.284
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 4.284
+  },
+  {
+    "gestures": "small-nod",
+    "duration_sec": 4.344
+  },
+  {
+    "gestures": "smile",
+    "duration_sec": 4.344
+  },
+  {
+    "gestures": "point",
+    "duration_sec": 6.948
+  },
+  {
+    "gestures": "pause",
+    "duration_sec": 6.948
+  }
+]

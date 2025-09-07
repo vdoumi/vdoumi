@@ -1,0 +1,1537 @@
+[
+  {
+    "slide_idx": 1,
+    "slide_id": "p1-1",
+    "text": "먼저 문제의 형태를 확인합니다. 세 식 모두 y'와 y의 1계 상미분방정식입니다.",
+    "normalized_text": "먼저 문제의 형태를 확인합니다. 세 식 모두 y 프라임와 y의 1계 상미분방정식입니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s001-n01.mp3",
+    "duration_sec": 8.208
+  },
+  {
+    "slide_idx": 1,
+    "slide_id": "p1-1",
+    "text": "중요한 개념은 평형해 y_{eq}=b/k과 초기편차가 지수적으로 감쇠한다는 점입니다.",
+    "normalized_text": "중요한 개념은 평형해 yeq 는 b/k과 초기편차가 지수적으로 감쇠한다는 점입니다.",
+    "gestures": [
+      "emphasize",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s001-n02.mp3",
+    "duration_sec": 6.696
+  },
+  {
+    "slide_idx": 2,
+    "slide_id": "p1-2",
+    "text": "여기서 적분인자 e^{\\u02a7 t}를 쓰면 왼쪽이 완전미분으로 바뀌고 적분으로 풀 수 있습니다.",
+    "normalized_text": "여기서 적분인자 e의 \\u02a7 t를 쓰면 왼쪽이 완전미분으로 바뀌고 적분으로 풀 수 있습니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s002-n01.mp3",
+    "duration_sec": 9.168
+  },
+  {
+    "slide_idx": 2,
+    "slide_id": "p1-2",
+    "text": "결과적으로 y는 평형해와 초기편차가 곱해진 지수함수의 합으로 표현됩니다.",
+    "normalized_text": "결과적으로 y는 평형해와 초기편차가 곱해진 지수함수의 합으로 표현됩니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s002-n02.mp3",
+    "duration_sec": 6.264
+  },
+  {
+    "slide_idx": 2,
+    "slide_id": "p1-2",
+    "text": "이 공식을 문제의 각 계수 k와 우변 b에 대입하면 바로 답을 얻습니다.",
+    "normalized_text": "이 공식을 문제의 각 계수 k와 우변 b에 대입하면 바로 답을 얻습니다.",
+    "gestures": [
+      "think",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s002-n03.mp3",
+    "duration_sec": 5.904
+  },
+  {
+    "slide_idx": 3,
+    "slide_id": "p1-3",
+    "text": "a번은 계수가 1이므로 적분인자는 e^{t}입니다. 완전미분화 후 적분하면 C가 나옵니다.",
+    "normalized_text": "a번은 계수가 1이므로 적분인자는 e의 t입니다. 완전미분화 후 적분하면 C가 나옵니다.",
+    "gestures": [
+      "write",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s003-n01.mp3",
+    "duration_sec": 7.752
+  },
+  {
+    "slide_idx": 3,
+    "slide_id": "p1-3",
+    "text": "초기조건 y(0)=y_0를 대입해 상수 C=y_0-5를 구합니다.",
+    "normalized_text": "초기조건 y0 는 y0를 대입해 상수 C 는 y0-5를 구합니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s003-n02.mp3",
+    "duration_sec": 6.744
+  },
+  {
+    "slide_idx": 3,
+    "slide_id": "p1-3",
+    "text": "따라서 최종 해는 y(t)=5+(y_0-5)e^{-t}입니다. 필요하면 바로 대입 검산할 수 있습니다.",
+    "normalized_text": "따라서 최종 해는 yt 는 5 플러스 y0-5e의 마이너스 t입니다. 필요하면 바로 대입 검산할 수 있습니다.",
+    "gestures": [
+      "think",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s003-n03.mp3",
+    "duration_sec": 10.152
+  },
+  {
+    "slide_idx": 4,
+    "slide_id": "p1-4",
+    "text": "b와 c는 계수가 2이므로 적분인자 e^{2t}를 씁니다. 우변의 상수에 따라 평형해가 달라집니다.",
+    "normalized_text": "b와 c는 계수가 2이므로 적분인자 e의 2t를 씁니다. 우변의 상수에 따라 평형해가 달라집니다.",
+    "gestures": [
+      "point",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s004-n01.mp3",
+    "duration_sec": 8.352
+  },
+  {
+    "slide_idx": 4,
+    "slide_id": "p1-4",
+    "text": "b번은 y(t)=5/2+(y_0-5/2)e^{-2t}, c번은 y(t)=5+(y_0-5)e^{-2t}가 됩니다.",
+    "normalized_text": "b번은 yt 는 5 나누기 2 플러스 y0-5 나누기 2e의 마이너스 2t, c번은 yt 는 5 플러스 y0-5e의 마이너스 2t가 됩니다.",
+    "gestures": [
+      "write",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s004-n02.mp3",
+    "duration_sec": 12.456
+  },
+  {
+    "slide_idx": 4,
+    "slide_id": "p1-4",
+    "text": "감쇠 속도는 지수의 계수 k로 결정됩니다. k가 클수록 더 빨리 평형에 도달합니다.",
+    "normalized_text": "감쇠 속도는 지수의 계수 k로 결정됩니다. k가 클수록 더 빨리 평형에 도달합니다.",
+    "gestures": [
+      "think",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s004-n03.mp3",
+    "duration_sec": 8.112
+  },
+  {
+    "slide_idx": 5,
+    "slide_id": "p1-5",
+    "text": "최종 정리입니다. 각 항의 평형값과 감쇠 속도를 함께 제시했습니다.",
+    "normalized_text": "최종 정리입니다. 각 항의 평형값과 감쇠 속도를 함께 제시했습니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s005-n01.mp3",
+    "duration_sec": 6.744
+  },
+  {
+    "slide_idx": 5,
+    "slide_id": "p1-5",
+    "text": "검산: 각 해를 미분해 원래 방정식의 우변과 일치하는지 확인하면 곧 성립합니다.",
+    "normalized_text": "검산: 각 해를 미분해 원래 방정식의 우변과 일치하는지 확인하면 곧 성립합니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s005-n02.mp3",
+    "duration_sec": 6.816
+  },
+  {
+    "slide_idx": 5,
+    "slide_id": "p1-5",
+    "text": "이상으로 문제 1.2-1의 풀이를 마칩니다. 궁금한 부분이 있으면 질문해주세요.",
+    "normalized_text": "이상으로 문제 1.2-1의 풀이를 마칩니다. 궁금한 부분이 있으면 질문해주세요.",
+    "gestures": [
+      "smile",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s005-n03.mp3",
+    "duration_sec": 7.704
+  },
+  {
+    "slide_idx": 6,
+    "slide_id": "p1-1-1",
+    "text": "먼저 문제를 읽어보겠습니다. 세 개의 1계 선형 상미분방정식이 주어지고 초기조건은 y(0)=y_0 입니다. 일반형과 평형해 공식을 기억해두세요.",
+    "normalized_text": "먼저 문제를 읽어보겠습니다. 세 개의 1계 선형 상미분방정식이 주어지고 초기조건은 y0 는 y0 입니다. 일반형과 평형해 공식을 기억해두세요.",
+    "gestures": [
+      "point",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s006-n01.mp3",
+    "duration_sec": 13.392
+  },
+  {
+    "slide_idx": 7,
+    "slide_id": "p1-2-1",
+    "text": "해 구하는 두 가지 길을 정리했습니다. 적분인자 방법으로 전개하거나 평형해를 찾아 편차가 지수함수로 성장·감소함을 이용하는 방법입니다.",
+    "normalized_text": "해 구하는 두 가지 길을 정리했습니다. 적분인자 방법으로 전개하거나 평형해를 찾아 편차가 지수함수로 성장·감소함을 이용하는 방법입니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s007-n01.mp3",
+    "duration_sec": 11.112
+  },
+  {
+    "slide_idx": 8,
+    "slide_id": "p1-3-1",
+    "text": "첫 번째 식은 y'-y=-5로 정리됩니다. 적분인자 e^{-t}를 곱해 양변을 적분하면 y(t)=5+Ce^{t}가 나오고 초기조건으로 C=y_0-5를 얻습니다.",
+    "normalized_text": "첫 번째 식은 y 프라임 마이너스 y 는 -5로 정리됩니다. 적분인자 e의 마이너스 t를 곱해 양변을 적분하면 yt 는 5 플러스 Ce의 t가 나오고 초기조건으로 C 는 y0-5를 얻습니다.",
+    "gestures": [
+      "write",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s008-n01.mp3",
+    "duration_sec": 15.648
+  },
+  {
+    "slide_idx": 9,
+    "slide_id": "p1-4-1",
+    "text": "두 번째와 세 번째 식은 계수가 2인 경우입니다. 적분인자 e^{-2t}를 쓰면 각각 y(t)=\\tfrac{5}{2}+(y_0-\\tfrac{5}{2})e^{2t}와 y(t)=5+(y_0-5)e^{2t}를 얻습니다.",
+    "normalized_text": "두 번째와 세 번째 식은 계수가 2인 경우입니다. 적분인자 e의 마이너스 2t를 쓰면 각각 yt 는 \\tfrac52 플러스 y0 마이너스 \\tfrac52e의 2t와 yt 는 5 플러스 y0-5e의 2t를 얻습니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s009-n01.mp3",
+    "duration_sec": 19.176
+  },
+  {
+    "slide_idx": 10,
+    "slide_id": "p1-5-1",
+    "text": "마지막으로 검산을 간단히 언급합니다. 미분해서 원래 식을 만족하는지 확인하면 됩니다. 모두 계수가 양수라 평형에서의 편차는 지수적으로 증폭합니다. 정답을 상자 안에 정리했습니다.",
+    "normalized_text": "마지막으로 검산을 간단히 언급합니다. 미분해서 원래 식을 만족하는지 확인하면 됩니다. 모두 계수가 양수라 평형에서의 편차는 지수적으로 증폭합니다. 정답을 상자 안에 정리했습니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s010-n01.mp3",
+    "duration_sec": 16.056
+  },
+  {
+    "slide_idx": 11,
+    "slide_id": "p1-1-2",
+    "text": "이번 문제는 일계 선형 상미분방정식 dy/dt = -a y + b (a>0, b>0)를 푸는 것입니다. 초기조건 y(0)=y_0가 주어졌을 때 일반해와 거동을 찾겠습니다.",
+    "normalized_text": "이번 문제는 일계 선형 상미분방정식 dy 나누기 dt 는 -a y 플러스 b a보다 크다0, b보다 크다0를 푸는 것입니다. 초기조건 y0 는 y0가 주어졌을 때 일반해와 거동을 찾겠습니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s011-n01.mp3",
+    "duration_sec": 15.696
+  },
+  {
+    "slide_idx": 12,
+    "slide_id": "p1-2-2",
+    "text": "먼저 특정해를 찾기 위해 상수해를 가정합니다. 0 = -a y_p + b 이므로 y_p = b/a 입니다. 동차해는 Ce^{-at}이고, 따라서 일반해는 C e^{-at} + b/a 입니다.",
+    "normalized_text": "먼저 특정해를 찾기 위해 상수해를 가정합니다. 0 는 -a yp 플러스 b 이므로 yp 는 b 나누기 a 입니다. 동차해는 Ce의 마이너스 at이고, 따라서 일반해는 C e의 마이너스 at 플러스 b 나누기 a 입니다.",
+    "gestures": [
+      "emphasize",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s012-n01.mp3",
+    "duration_sec": 17.28
+  },
+  {
+    "slide_idx": 13,
+    "slide_id": "p1-3-2",
+    "text": "초기조건을 일반해에 대입하면 C = y_0 - b/a 가 됩니다. 그래서 최종 해는 (y_0 - b/a) e^{-at} + b/a 이지요.",
+    "normalized_text": "초기조건을 일반해에 대입하면 C 는 y0 - b 나누기 a 가 됩니다. 그래서 최종 해는 y0 - b 나누기 a e의 마이너스 at 플러스 b 나누기 a 이지요.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s013-n01.mp3",
+    "duration_sec": 12.648
+  },
+  {
+    "slide_idx": 14,
+    "slide_id": "p1-4-2",
+    "text": "미분해서 원래 식에 대입하면 해가 방정식을 만족함을 확인할 수 있습니다. t가 무한대로 갈 때 지수항이 사라져 평형 b/a로 수렴합니다. 초기값이 평형보다 크면 감소, 작으면 증가합니다.",
+    "normalized_text": "미분해서 원래 식에 대입하면 해가 방정식을 만족함을 확인할 수 있습니다. t가 무한대로 갈 때 지수항이 사라져 평형 b/a로 수렴합니다. 초기값이 평형보다 크면 감소, 작으면 증가합니다.",
+    "gestures": [
+      "think",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s014-n01.mp3",
+    "duration_sec": 16.032
+  },
+  {
+    "slide_idx": 15,
+    "slide_id": "p1-5-2",
+    "text": "최종 정리는 여기까지입니다. 정답은 박스 안 식처럼 주어집니다. 필요하면 이 식로부터 다양한 거동을 바로 읽을 수 있습니다.",
+    "normalized_text": "최종 정리는 여기까지입니다. 정답은 박스 안 식처럼 주어집니다. 필요하면 이 식로부터 다양한 거동을 바로 읽을 수 있습니다.",
+    "gestures": [
+      "smile",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s015-n01.mp3",
+    "duration_sec": 11.352
+  },
+  {
+    "slide_idx": 16,
+    "slide_id": "p1-1-3",
+    "text": "안녕하세요. 이번 슬라이드에서는 문제 1.2-4, ODE \\(dy/dt = a y - b\\) 의 평형해와 편차 변환을 다룹니다.",
+    "normalized_text": "안녕하세요. 이번 슬라이드에서는 문제 1.2-4, ODE \\dy 나누기 dt 는 a y - b\\ 의 평형해와 편차 변환을 다룹니다.",
+    "gestures": [
+      "smile",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s016-n01.mp3",
+    "duration_sec": 12.648
+  },
+  {
+    "slide_idx": 16,
+    "slide_id": "p1-1-3",
+    "text": "먼저 평형해의 정의부터 확인하겠습니다. 평형해는 시간이 지나도 변하지 않는 상수해로, 미분이 0이 됩니다.",
+    "normalized_text": "먼저 평형해의 정의부터 확인하겠습니다. 평형해는 시간이 지나도 변하지 않는 상수해로, 미분이 0이 됩니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s016-n02.mp3",
+    "duration_sec": 9.168
+  },
+  {
+    "slide_idx": 17,
+    "slide_id": "p1-2-3",
+    "text": "평형 조건을 대입하면 간단히 0 = a y_e - b 가 됩니다. 여기서 바로 y_e 를 구할 수 있습니다.",
+    "normalized_text": "평형 조건을 대입하면 간단히 0 는 a ye - b 가 됩니다. 여기서 바로 ye 를 구할 수 있습니다.",
+    "gestures": [
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s017-n01.mp3",
+    "duration_sec": 8.352
+  },
+  {
+    "slide_idx": 17,
+    "slide_id": "p1-2-3",
+    "text": "일반적인 경우 a 가 0이 아니면 y_e = b / a 입니다. a 가 0인 특이한 경우도 반드시 따로 적어둡니다.",
+    "normalized_text": "일반적인 경우 a 가 0이 아니면 ye 는 b 나누기 a 입니다. a 가 0인 특이한 경우도 반드시 따로 적어둡니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s017-n02.mp3",
+    "duration_sec": 9.456
+  },
+  {
+    "slide_idx": 18,
+    "slide_id": "p1-3-3",
+    "text": "편차 Y 를 정의하면 미분은 그대로 dy/dt 와 같아집니다. y_e 는 상수이기 때문입니다.",
+    "normalized_text": "편차 Y 를 정의하면 미분은 그대로 dy 나누기 dt 와 같아집니다. ye 는 상수이기 때문입니다.",
+    "gestures": [
+      "write",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s018-n01.mp3",
+    "duration_sec": 8.688
+  },
+  {
+    "slide_idx": 18,
+    "slide_id": "p1-3-3",
+    "text": "대입 후 정리하면 dY/dt = aY + (a y_e - b) 가 되고, 평형의 정의로 두 번째 괄호는 0이 됩니다.",
+    "normalized_text": "대입 후 정리하면 dY 나누기 dt 는 aY 플러스 a ye - b 가 되고, 평형의 정의로 두 번째 괄호는 0이 됩니다.",
+    "gestures": [
+      "emphasize",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s018-n02.mp3",
+    "duration_sec": 8.808
+  },
+  {
+    "slide_idx": 18,
+    "slide_id": "p1-3-3",
+    "text": "따라서 편차 방정식은 아주 간단한 선형 ODE dY/dt = aY 가 됩니다.",
+    "normalized_text": "따라서 편차 방정식은 아주 간단한 선형 ODE dY 나누기 dt 는 aY 가 됩니다.",
+    "gestures": [
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s018-n03.mp3",
+    "duration_sec": 6.744
+  },
+  {
+    "slide_idx": 19,
+    "slide_id": "p1-4-3",
+    "text": "dY/dt = aY 의 해는 지수함수 형태, Y(t)=C e^{at} 입니다. 상수를 되돌리면 y(t)=y_e + C e^{at} 가 됩니다.",
+    "normalized_text": "dY 나누기 dt 는 aY 의 해는 지수함수 형태, Yt 는 C e의 at 입니다. 상수를 되돌리면 yt 는 ye 플러스 C e의 at 가 됩니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s019-n01.mp3",
+    "duration_sec": 11.496
+  },
+  {
+    "slide_idx": 19,
+    "slide_id": "p1-4-3",
+    "text": "원래 방정식에 재대입해 좌변과 우변이 일치하는지 빠르게 검산합니다. 항이 정확히 소거되어 일치합니다.",
+    "normalized_text": "원래 방정식에 재대입해 좌변과 우변이 일치하는지 빠르게 검산합니다. 항이 정확히 소거되어 일치합니다.",
+    "gestures": [
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s019-n02.mp3",
+    "duration_sec": 9.288
+  },
+  {
+    "slide_idx": 20,
+    "slide_id": "p1-5-3",
+    "text": "정리하겠습니다. 일반적인 정답은 화면처럼 y_e = b/a, 편차 방정식은 dY/dt = aY, 해는 y = y_e + C e^{at} 입니다.",
+    "normalized_text": "정리하겠습니다. 일반적인 정답은 화면처럼 ye 는 b 나누기 a, 편차 방정식은 dY 나누기 dt 는 aY, 해는 y 는 ye 플러스 C e의 at 입니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s020-n01.mp3",
+    "duration_sec": 12.168
+  },
+  {
+    "slide_idx": 20,
+    "slide_id": "p1-5-3",
+    "text": "특이 케이스 a=0 도 함께 정리했습니다. 이제 이 문제는 완료입니다. 고생하셨습니다.",
+    "normalized_text": "특이 케이스 a 는 0 도 함께 정리했습니다. 이제 이 문제는 완료입니다. 고생하셨습니다.",
+    "gestures": [
+      "small-nod",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s020-n02.mp3",
+    "duration_sec": 8.688
+  },
+  {
+    "slide_idx": 21,
+    "slide_id": "p1-1-4",
+    "text": "먼저 문제를 읽어보겠습니다. 미분방정식은 \\dfrac{dy}{dt}=ay-b 입니다. 목표는 모든 경우를 포함한 일반해를 찾는 것입니다.",
+    "normalized_text": "먼저 문제를 읽어보겠습니다. 미분방정식은 \\dfracdydt 는 ay 마이너스 b 입니다. 목표는 모든 경우를 포함한 일반해를 찾는 것입니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s021-n01.mp3",
+    "duration_sec": 13.056
+  },
+  {
+    "slide_idx": 22,
+    "slide_id": "p1-2-4",
+    "text": "우선 동차식 \\dfrac{dy}{dt}=ay 를 풀면, 분리하여 \\ln|y|=at+C_0 를 얻고 지수화하면 해는 y(t)=Ce^{at} 입니다.",
+    "normalized_text": "우선 동차식 \\dfracdydt 는 ay 를 풀면, 분리하여 자연로그절댓값 y 는 at 플러스 C0 를 얻고 지수화하면 해는 yt 는 Ce의 at 입니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s022-n01.mp3",
+    "duration_sec": 12.0
+  },
+  {
+    "slide_idx": 23,
+    "slide_id": "p1-3-4",
+    "text": "비동차항이 상수이므로 y(t)=y_1(t)+k 형태를 가정합니다. 미분은 y_1'(t)=a y_1(t)이므로 대입하면 ak=b 가 되고 k=b/a 를 얻습니다. 단 a가 0이면 분모 문제가 생깁니다.",
+    "normalized_text": "비동차항이 상수이므로 yt 는 y1t 플러스 k 형태를 가정합니다. 미분은 y1 프라임t 는 a y1t이므로 대입하면 ak 는 b 가 되고 k 는 b 나누기 a 를 얻습니다. 단 a가 0이면 분모 문제가 생깁니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s023-n01.mp3",
+    "duration_sec": 18.144
+  },
+  {
+    "slide_idx": 24,
+    "slide_id": "p1-4-4",
+    "text": "이제 특수한 경우 a=0 을 따로 보겠습니다. 방정식은 y'=-b 가 되어 적분하면 y=-bt+C 가 됩니다. 분모 a를 피해서 이 경우를 반드시 처리해야 합니다.",
+    "normalized_text": "이제 특수한 경우 a 는 0 을 따로 보겠습니다. 방정식은 y 프라임 는 -b 가 되어 적분하면 y 는 -bt 플러스 C 가 됩니다. 분모 a를 피해서 이 경우를 반드시 처리해야 합니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s024-n01.mp3",
+    "duration_sec": 15.12
+  },
+  {
+    "slide_idx": 25,
+    "slide_id": "p1-5-4",
+    "text": "마지막으로 정리합니다. a가 0이 아닐 때는 y(t)=Ce^{at}+b/a 이고, a가 0일 때는 y(t)=-bt+C 입니다. C는 임의의 상수입니다.",
+    "normalized_text": "마지막으로 정리합니다. a가 0이 아닐 때는 yt 는 Ce의 at 플러스 b 나누기 a 이고, a가 0일 때는 yt 는 -bt 플러스 C 입니다. C는 임의의 상수입니다.",
+    "gestures": [
+      "smile",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s025-n01.mp3",
+    "duration_sec": 14.328
+  },
+  {
+    "slide_idx": 26,
+    "slide_id": "p1-1-5",
+    "text": "안녕하세요. 이번 슬라이드에서는 방정식 \\dfrac{dy}{dt}=-ay+b 의 일반해를 구하겠습니다. 먼저 문제를 명확히 읽어봅니다.",
+    "normalized_text": "안녕하세요. 이번 슬라이드에서는 방정식 \\dfracdydt 는 -ay 플러스 b 의 일반해를 구하겠습니다. 먼저 문제를 명확히 읽어봅니다.",
+    "gestures": [
+      "point",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s026-n01.mp3",
+    "duration_sec": 12.384
+  },
+  {
+    "slide_idx": 27,
+    "slide_id": "p1-2-5",
+    "text": "먼저 동차식 \\dfrac{dy}{dt}=-ay 를 분리적분하면 \\dfrac{dy}{y}=-a\\,dt 가 되고 적분하여 y_1(t)=Ce^{-at} 을 얻습니다. 여기서 C는 적분상수입니다.",
+    "normalized_text": "먼저 동차식 \\dfracdydt 는 -ay 를 분리적분하면 \\dfracdyy 는 -a dt 가 되고 적분하여 y1t 는 Ce의 마이너스 at 을 얻습니다. 여기서 C는 적분상수입니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s027-n01.mp3",
+    "duration_sec": 14.328
+  },
+  {
+    "slide_idx": 28,
+    "slide_id": "p1-3-5",
+    "text": "동차해에 상수 k 를 더한 형태를 가정해 대입하면 식이 단순히 상수항에 대한 조건 ak=b 를 줍니다. 여기서 a가 0인지 아닌지로 경우를 나눕니다.",
+    "normalized_text": "동차해에 상수 k 를 더한 형태를 가정해 대입하면 식이 단순히 상수항에 대한 조건 ak 는 b 를 줍니다. 여기서 a가 0인지 아닌지로 경우를 나눕니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s028-n01.mp3",
+    "duration_sec": 12.48
+  },
+  {
+    "slide_idx": 29,
+    "slide_id": "p1-4-5",
+    "text": "따라서 a가 0이 아닌 경우 k=b/a 로 정해져 y(t)=Ce^{-at}+b/a 입니다. a=0 이면 원래 식이 dy/dt=b 이므로 y=bt+C 가 됩니다. 각각 원식에 대입하여 검증까지 마칩니다.",
+    "normalized_text": "따라서 a가 0이 아닌 경우 k 는 b 나누기 a 로 정해져 yt 는 Ce의 마이너스 at 플러스 b 나누기 a 입니다. a 는 0 이면 원래 식이 dy 나누기 dt 는 b 이므로 y 는 bt 플러스 C 가 됩니다. 각각 원식에 대입하여 검증까지 마칩니다.",
+    "gestures": [
+      "small-nod",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s029-n01.mp3",
+    "duration_sec": 19.704
+  },
+  {
+    "slide_idx": 30,
+    "slide_id": "p1-5-5",
+    "text": "정리하면 최종 해는 다음과 같습니다. a가 0이 아닌 경우와 0인 경우를 모두 포함한 일반해를 위와 같이 얻었습니다.",
+    "normalized_text": "정리하면 최종 해는 다음과 같습니다. a가 0이 아닌 경우와 0인 경우를 모두 포함한 일반해를 위와 같이 얻었습니다.",
+    "gestures": [
+      "smile",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s030-n01.mp3",
+    "duration_sec": 9.504
+  },
+  {
+    "slide_idx": 31,
+    "slide_id": "p1-1-6",
+    "text": "먼저 문제와 모델을 간단히 읽어보겠습니다. 식은 1계 선형 상수계수형입니다.",
+    "normalized_text": "먼저 문제와 모델을 간단히 읽어보겠습니다. 식은 1계 선형 상수계수형입니다.",
+    "gestures": [
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s031-n01.mp3",
+    "duration_sec": 7.392
+  },
+  {
+    "slide_idx": 31,
+    "slide_id": "p1-1-6",
+    "text": "우변을 0으로 놓으면 평형상태가 \\(p^*=900\\)임을 바로 확인할 수 있습니다.",
+    "normalized_text": "우변을 0으로 놓으면 평형상태가 \\p의 *승 는 900\\임을 바로 확인할 수 있습니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s031-n02.mp3",
+    "duration_sec": 8.64
+  },
+  {
+    "slide_idx": 31,
+    "slide_id": "p1-1-6",
+    "text": "이제 일반해를 구하고 초기값으로 적분상수를 결정한 뒤 멸종시간을 찾는 순서로 진행하겠습니다.",
+    "normalized_text": "이제 일반해를 구하고 초기값으로 적분상수를 결정한 뒤 멸종시간을 찾는 순서로 진행하겠습니다.",
+    "gestures": [
+      "think",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s031-n03.mp3",
+    "duration_sec": 7.752
+  },
+  {
+    "slide_idx": 32,
+    "slide_id": "p1-2-6",
+    "text": "동차식 \\(dp/dt-\\tfrac12 p=0\\)의 해는 지수함수 형태로 \\(p_h=C e^{t/2}\\)입니다.",
+    "normalized_text": "동차식 \\dp 나누기 dt 마이너스 \\tfrac12 p 는 0\\의 해는 지수함수 형태로 \\ph 는 C e의 t 나누기 2\\입니다.",
+    "gestures": [
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s032-n01.mp3",
+    "duration_sec": 13.416
+  },
+  {
+    "slide_idx": 32,
+    "slide_id": "p1-2-6",
+    "text": "평형해로 상수해 \\(p^*=900\\)를 더하면 일반해 \\(p(t)=900 + C e^{t/2}\\)를 얻습니다.",
+    "normalized_text": "평형해로 상수해 \\p의 *승 는 900\\를 더하면 일반해 \\pt 는 900 플러스 C e의 t 나누기 2\\를 얻습니다.",
+    "gestures": [
+      "emphasize",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s032-n02.mp3",
+    "duration_sec": 12.0
+  },
+  {
+    "slide_idx": 32,
+    "slide_id": "p1-2-6",
+    "text": "이제 초기조건 \\(p(0)=p_0\\)를 대입해 적분상수를 결정하겠습니다.",
+    "normalized_text": "이제 초기조건 \\p0 는 p0\\를 대입해 적분상수를 결정하겠습니다.",
+    "gestures": [
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s032-n03.mp3",
+    "duration_sec": 7.824
+  },
+  {
+    "slide_idx": 33,
+    "slide_id": "p1-3-6",
+    "text": "초기조건을 대입하면 적분상수는 \\(C=p_0-900\\)로 정해집니다.",
+    "normalized_text": "초기조건을 대입하면 적분상수는 \\C 는 p0-900\\로 정해집니다.",
+    "gestures": [
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s033-n01.mp3",
+    "duration_sec": 8.064
+  },
+  {
+    "slide_idx": 33,
+    "slide_id": "p1-3-6",
+    "text": "따라서 해는 \\(p(t)=900+(p_0-900)e^{t/2}\\)이고, 멸종이 유한시간에 일어나려면 \\(p_0<900\\)이어야 합니다.",
+    "normalized_text": "따라서 해는 \\pt 는 900 플러스 p0-900e의 t 나누기 2\\이고, 멸종이 유한시간에 일어나려면 \\p0보다 작다900\\이어야 합니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s033-n02.mp3",
+    "duration_sec": 14.184
+  },
+  {
+    "slide_idx": 33,
+    "slide_id": "p1-3-6",
+    "text": "다음으로 (a)~(c)에서 실제로 멸종시간을 계산하겠습니다.",
+    "normalized_text": "다음으로 a~c에서 실제로 멸종시간을 계산하겠습니다.",
+    "gestures": [
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s033-n03.mp3",
+    "duration_sec": 4.92
+  },
+  {
+    "slide_idx": 34,
+    "slide_id": "p1-4-6",
+    "text": "(a)에서 식을 정리하면 \\(e^{T/2}=18\\)이므로 \\(T=2\\ln 18\\)입니다.",
+    "normalized_text": "a에서 식을 정리하면 \\e의 T 나누기 2 는 18\\이므로 \\T 는 2자연로그 18\\입니다.",
+    "gestures": [
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s034-n01.mp3",
+    "duration_sec": 10.464
+  },
+  {
+    "slide_idx": 34,
+    "slide_id": "p1-4-6",
+    "text": "(b) 일반적으로는 양변을 정리하면 \\(e^{T/2}=900/(900-p_0)\\)이고 따라서 \\(T=2\\ln\\!\\left(\\dfrac{900}{900-p_0}\\right)\\)입니다.",
+    "normalized_text": "b 일반적으로는 양변을 정리하면 \\e의 T 나누기 2 는 900/900 마이너스 p0\\이고 따라서 \\T 는 2자연로그 \\dfrac900900 마이너스 p0 \\입니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s034-n02.mp3",
+    "duration_sec": 15.72
+  },
+  {
+    "slide_idx": 34,
+    "slide_id": "p1-4-6",
+    "text": "(c) 멸종이 1년일 때 역으로 풀면 \\(p_0=900(1-e^{-1/2})\\)이 되어 약 \\(354.12\\)가 됩니다.",
+    "normalized_text": "c 멸종이 1년일 때 역으로 풀면 \\p0 는 9001 마이너스 e의 마이너스 1 나누기 2\\이 되어 약 \\354.12\\가 됩니다.",
+    "gestures": [
+      "think",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s034-n03.mp3",
+    "duration_sec": 13.584
+  },
+  {
+    "slide_idx": 35,
+    "slide_id": "p1-5-6",
+    "text": "마지막으로 해와 각 부분의 답을 깔끔하게 정리했습니다. 해는 항상 \\(p(t)=900+(p_0-900)e^{t/2}\\)입니다.",
+    "normalized_text": "마지막으로 해와 각 부분의 답을 깔끔하게 정리했습니다. 해는 항상 \\pt 는 900 플러스 p0-900e의 t 나누기 2\\입니다.",
+    "gestures": [
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s035-n01.mp3",
+    "duration_sec": 12.864
+  },
+  {
+    "slide_idx": 35,
+    "slide_id": "p1-5-6",
+    "text": "(a)~(c)의 결과를 확인하면, 유한한 멸종은 초기값이 900보다 작을 때만 발생합니다.",
+    "normalized_text": "a~c의 결과를 확인하면, 유한한 멸종은 초기값이 900보다 작을 때만 발생합니다.",
+    "gestures": [
+      "small-nod",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s035-n02.mp3",
+    "duration_sec": 7.008
+  },
+  {
+    "slide_idx": 35,
+    "slide_id": "p1-5-6",
+    "text": "문제의 최종 답은 슬라이드에 상자 표기로 정리된 식들입니다. 이상으로 풀이를 마치겠습니다.",
+    "normalized_text": "문제의 최종 답은 슬라이드에 상자 표기로 정리된 식들입니다. 이상으로 풀이를 마치겠습니다.",
+    "gestures": [
+      "smile",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s035-n03.mp3",
+    "duration_sec": 7.92
+  },
+  {
+    "slide_idx": 36,
+    "slide_id": "p1.2-8-1",
+    "text": "먼저 문제를 읽어볼게요. 속도에 대한 1계 선형 미분방정식과 초기조건이 주어졌습니다.",
+    "normalized_text": "먼저 문제를 읽어볼게요. 속도에 대한 1계 선형 미분방정식과 초기조건이 주어졌습니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s036-n01.mp3",
+    "duration_sec": 7.992
+  },
+  {
+    "slide_idx": 36,
+    "slide_id": "p1.2-8-1",
+    "text": "우리는 (a) 한계속도의 98%에 도달하는 시간 T를 구하고, (b) 그때까지 떨어진 거리를 구하면 됩니다.",
+    "normalized_text": "우리는 a 한계속도의 98%에 도달하는 시간 T를 구하고, b 그때까지 떨어진 거리를 구하면 됩니다.",
+    "gestures": [
+      "emphasize",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s036-n02.mp3",
+    "duration_sec": 8.136
+  },
+  {
+    "slide_idx": 37,
+    "slide_id": "p1.2-8-2",
+    "text": "이 방정식은 상수 계수를 가진 선형식이라 바로 표준해를 쓸 수 있습니다. 일반해는 지수항과 정상상태의 합 형태죠.",
+    "normalized_text": "이 방정식은 상수 계수를 가진 선형식이라 바로 표준해를 쓸 수 있습니다. 일반해는 지수항과 정상상태의 합 형태죠.",
+    "gestures": [
+      "write",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s037-n01.mp3",
+    "duration_sec": 9.888
+  },
+  {
+    "slide_idx": 37,
+    "slide_id": "p1.2-8-2",
+    "text": "초기조건을 대입하면 상수 C는 -49가 되고, 그래서 속도 해는 v(t)=49(1-e^{-t/5})가 됩니다.",
+    "normalized_text": "초기조건을 대입하면 상수 C는 -49가 되고, 그래서 속도 해는 vt 는 491 마이너스 e의 마이너스 t 나누기 5가 됩니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s037-n02.mp3",
+    "duration_sec": 10.608
+  },
+  {
+    "slide_idx": 38,
+    "slide_id": "p1.2-8-3",
+    "text": "먼저 98% 조건을 속도식에 대입하면 지수항이 0.02가 되고 로그를 풀어 T=5 ln 50임을 얻습니다.",
+    "normalized_text": "먼저 98% 조건을 속도식에 대입하면 지수항이 0.02가 되고 로그를 풀어 T 는 5 자연로그 50임을 얻습니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s038-n01.mp3",
+    "duration_sec": 9.048
+  },
+  {
+    "slide_idx": 38,
+    "slide_id": "p1.2-8-3",
+    "text": "거리는 속도를 적분하면 됩니다. 적분 결과를 정리하고 e^{-T/5}=0.02를 대입하면 s=49(T-4.9)로 간단해집니다.",
+    "normalized_text": "거리는 속도를 적분하면 됩니다. 적분 결과를 정리하고 e의 마이너스 T 나누기 5 는 0.02를 대입하면 s 는 49T-4.9로 간단해집니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s038-n02.mp3",
+    "duration_sec": 12.504
+  },
+  {
+    "slide_idx": 38,
+    "slide_id": "p1.2-8-3",
+    "text": "마지막으로 T 값을 대입해 수치적으로 약 718.35미터를 얻습니다. 단위와 결과가 일관되는지 확인하세요.",
+    "normalized_text": "마지막으로 T 값을 대입해 수치적으로 약 718.35미터를 얻습니다. 단위와 결과가 일관되는지 확인하세요.",
+    "gestures": [
+      "small-nod",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s038-n03.mp3",
+    "duration_sec": 9.72
+  },
+  {
+    "slide_idx": 39,
+    "slide_id": "p1.2-8-4",
+    "text": "결론입니다. 시간은 5 ln 50, 수치 약 19.56초이고, 그때까지 떨어진 거리는 약 718.35미터입니다.",
+    "normalized_text": "결론입니다. 시간은 5 자연로그 50, 수치 약 19.56초이고, 그때까지 떨어진 거리는 약 718.35미터입니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s039-n01.mp3",
+    "duration_sec": 10.968
+  },
+  {
+    "slide_idx": 39,
+    "slide_id": "p1.2-8-4",
+    "text": "마지막으로 속도에 대입해 98% 조건이 정확히 만족하는지 간단히 확인했습니다. 여기까지입니다.",
+    "normalized_text": "마지막으로 속도에 대입해 98% 조건이 정확히 만족하는지 간단히 확인했습니다. 여기까지입니다.",
+    "gestures": [
+      "small-nod",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s039-n02.mp3",
+    "duration_sec": 9.024
+  },
+  {
+    "slide_idx": 40,
+    "slide_id": "p1-1-7",
+    "text": "먼저 문제의 물리적 상황을 정리합니다. 질량은 열 킬로그램, 항력은 속도의 제곱에 비례한다고 했습니다.",
+    "normalized_text": "먼저 문제의 물리적 상황을 정리합니다. 질량은 열 킬로그램, 항력은 속도의 제곱에 비례한다고 했습니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s040-n01.mp3",
+    "duration_sec": 9.144
+  },
+  {
+    "slide_idx": 40,
+    "slide_id": "p1-1-7",
+    "text": "운동방정식 m dv/dt = mg - k v^2 를 세우고, 정상속도 49 m/s 를 대입해 k 를 구합니다.",
+    "normalized_text": "운동방정식 m dv 나누기 dt 는 mg - k v의 2승 를 세우고, 정상속도 49 m 나누기 s 를 대입해 k 를 구합니다.",
+    "gestures": [
+      "emphasize",
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s040-n02.mp3",
+    "duration_sec": 9.6
+  },
+  {
+    "slide_idx": 40,
+    "slide_id": "p1-1-7",
+    "text": "그 결과 k = 2/49 이고 이를 대입하면 dv/dt = 1/245 (49^2 - v^2) 입니다.",
+    "normalized_text": "그 결과 k 는 2 나누기 49 이고 이를 대입하면 dv 나누기 dt 는 1 나누기 245 49의 2승 - v의 2승 입니다.",
+    "gestures": [
+      "smile",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s040-n03.mp3",
+    "duration_sec": 9.696
+  },
+  {
+    "slide_idx": 41,
+    "slide_id": "p1-2-7",
+    "text": "이제 변수분리를 하고 좌변을 적분합니다. 표준 적분식을 기억해 주십시오.",
+    "normalized_text": "이제 변수분리를 하고 좌변을 적분합니다. 표준 적분식을 기억해 주십시오.",
+    "gestures": [
+      "think",
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s041-n01.mp3",
+    "duration_sec": 6.96
+  },
+  {
+    "slide_idx": 41,
+    "slide_id": "p1-2-7",
+    "text": "초깃값 v(0)=0 을 대입하면 적분상수는 0 이고, 지수형으로 정리하면 v(t)=49 tanh(t/5) 를 얻습니다.",
+    "normalized_text": "초깃값 v0 는 0 을 대입하면 적분상수는 0 이고, 지수형으로 정리하면 vt 는 49 쌍곡탄젠트t 나누기 5 를 얻습니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s041-n02.mp3",
+    "duration_sec": 10.248
+  },
+  {
+    "slide_idx": 41,
+    "slide_id": "p1-2-7",
+    "text": "초기 기울기를 확인하면 dv/dt|_{t=0}=g=9.8 이므로 물리적으로도 일치합니다.",
+    "normalized_text": "초기 기울기를 확인하면 dv 나누기 dt|t 는 0 는 g 는 9.8 이므로 물리적으로도 일치합니다.",
+    "gestures": [
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s041-n03.mp3",
+    "duration_sec": 7.656
+  },
+  {
+    "slide_idx": 42,
+    "slide_id": "p1-3-7",
+    "text": "속도를 시간에 대해 적분하면 위치함수를 얻습니다. tanh 의 적분을 cosh 의 로그로 바꿉니다.",
+    "normalized_text": "속도를 시간에 대해 적분하면 위치함수를 얻습니다. 쌍곡탄젠트 의 적분을 쌍곡코사인 의 로그로 바꿉니다.",
+    "gestures": [
+      "write",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s042-n01.mp3",
+    "duration_sec": 8.904
+  },
+  {
+    "slide_idx": 42,
+    "slide_id": "p1-3-7",
+    "text": "그 결과 x(t)=245 ln cosh(t/5) 이고, t=0에서 0 이 됨을 확인합니다.",
+    "normalized_text": "그 결과 xt 는 245 자연로그 쌍곡코사인t 나누기 5 이고, t 는 0에서 0 이 됨을 확인합니다.",
+    "gestures": [
+      "small-nod",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s042-n02.mp3",
+    "duration_sec": 8.208
+  },
+  {
+    "slide_idx": 43,
+    "slide_id": "p1-4-7",
+    "text": "위치식에 300 을 대입하고 로그를 풀어 T 를 구합니다. cosh 를 arccosh 로 역함수 취합니다.",
+    "normalized_text": "위치식에 300 을 대입하고 로그를 풀어 T 를 구합니다. 쌍곡코사인 를 arccosh 로 역함수 취합니다.",
+    "gestures": [
+      "emphasize",
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s043-n01.mp3",
+    "duration_sec": 8.928
+  },
+  {
+    "slide_idx": 43,
+    "slide_id": "p1-4-7",
+    "text": "정리하면 T = 5 arccosh(e^{60/49}) 이고, 수치적으로 약 9.48 초입니다.",
+    "normalized_text": "정리하면 T 는 5 arccoshe의 60 나누기 49 이고, 수치적으로 약 9.48 초입니다.",
+    "gestures": [
+      "point",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s043-n02.mp3",
+    "duration_sec": 7.296
+  },
+  {
+    "slide_idx": 44,
+    "slide_id": "p1-5-7",
+    "text": "선형 항력과 비교하면 두 해는 초기 조건과 초기 가속도가 동일합니다.",
+    "normalized_text": "선형 항력과 비교하면 두 해는 초기 조건과 초기 가속도가 동일합니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s044-n01.mp3",
+    "duration_sec": 5.856
+  },
+  {
+    "slide_idx": 44,
+    "slide_id": "p1-5-7",
+    "text": "그러나 수렴속도로 보면 이차항력의 잔여항은 약 e^{-2t/5} 로 더 빠르게 떨어져 정상속도에 빨리 접근합니다.",
+    "normalized_text": "그러나 수렴속도로 보면 이차항력의 잔여항은 약 e의 마이너스 2t 나누기 5 로 더 빠르게 떨어져 정상속도에 빨리 접근합니다.",
+    "gestures": [
+      "emphasize",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s044-n02.mp3",
+    "duration_sec": 9.888
+  },
+  {
+    "slide_idx": 45,
+    "slide_id": "p1-6",
+    "text": "마지막으로 정답을 한 번에 정리합니다. 식들을 확인하세요.",
+    "normalized_text": "마지막으로 정답을 한 번에 정리합니다. 식들을 확인하세요.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s045-n01.mp3",
+    "duration_sec": 5.616
+  },
+  {
+    "slide_idx": 45,
+    "slide_id": "p1-6",
+    "text": "특히 시간은 약 9.48 초임을 다시 한 번 확인합니다. 강의는 여기까지입니다.",
+    "normalized_text": "특히 시간은 약 9.48 초임을 다시 한 번 확인합니다. 강의는 여기까지입니다.",
+    "gestures": [
+      "small-nod",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s045-n02.mp3",
+    "duration_sec": 7.464
+  },
+  {
+    "slide_idx": 46,
+    "slide_id": "p1.2-10-1",
+    "text": "먼저 문제 상황을 정리하겠습니다. 방사성 붕괴는 현재량에 비례하므로 미분방정식은 dQ/dt = -r Q 이고, 해는 Q(t)=Q_0 e^{-r t} 입니다. 초기값은 Q_0=100 mg, 그리고 Q(1)=82.04 mg 입니다.",
+    "normalized_text": "먼저 문제 상황을 정리하겠습니다. 방사성 붕괴는 현재량에 비례하므로 미분방정식은 dQ 나누기 dt 는 -r Q 이고, 해는 Qt 는 Q0 e의 마이너스 r t 입니다. 초기값은 Q0 는 100 mg, 그리고 Q1 는 82.04 mg 입니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s046-n01.mp3",
+    "duration_sec": 20.208
+  },
+  {
+    "slide_idx": 47,
+    "slide_id": "p1.2-10-2",
+    "text": "첫 번째 단계로 Q(1)=100 e^{-r} 에 82.04를 대입합니다. 양변을 나누고 로그를 취하면 r=-ln(0.8204) 이고, 수치로는 약 0.19796 주^{-1} 입니다.",
+    "normalized_text": "첫 번째 단계로 Q1 는 100 e의 마이너스 r 에 82.04를 대입합니다. 양변을 나누고 로그를 취하면 r 는 -자연로그0.8204 이고, 수치로는 약 0.19796 주의 마이너스 1승 입니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s047-n01.mp3",
+    "duration_sec": 16.224
+  },
+  {
+    "slide_idx": 48,
+    "slide_id": "p1.2-10-3",
+    "text": "구한 r 값을 일반해에 대입하면 Q(t)=100 e^{-0.19796 t} mg 입니다. 1주일을 대입해보면 100 e^{-0.19796}≈82.04 mg 으로 주어진 값과 일치합니다.",
+    "normalized_text": "구한 r 값을 일반해에 대입하면 Qt 는 100 e의 마이너스 0.19796 t mg 입니다. 1주일을 대입해보면 100 e의 마이너스 0.19796약82.04 mg 으로 주어진 값과 일치합니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s048-n01.mp3",
+    "duration_sec": 15.912
+  },
+  {
+    "slide_idx": 49,
+    "slide_id": "p1.2-10-4",
+    "text": "반감기는 Q(t_{1/2})=Q_0/2 이므로 e^{-r t_{1/2}}=1/2 가 되고, 양변에 로그를 취하면 t_{1/2}=ln 2 / r 입니다. 수치적으로 약 3.50 주입니다.",
+    "normalized_text": "반감기는 Qt1 나누기 2 는 Q0/2 이므로 e^-r t1 나누기 2 는 1 나누기 2 가 되고, 양변에 로그를 취하면 t1 나누기 2 는 자연로그 2 나누기 r 입니다. 수치적으로 약 3.50 주입니다.",
+    "gestures": [
+      "think",
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s049-n01.mp3",
+    "duration_sec": 15.264
+  },
+  {
+    "slide_idx": 50,
+    "slide_id": "p1.2-10-5",
+    "text": "정리하겠습니다. r≈0.19796 주^{-1}, Q(t)=100 e^{-0.19796 t} mg, 반감기 t_{1/2}≈3.50 주가 최종 답입니다. 화면의 박스를 보시면 한눈에 정리되어 있습니다.",
+    "normalized_text": "정리하겠습니다. r약0.19796 주의 마이너스 1승, Qt 는 100 e의 마이너스 0.19796 t mg, 반감기 t1 나누기 2약3.50 주가 최종 답입니다. 화면의 박스를 보시면 한눈에 정리되어 있습니다.",
+    "gestures": [
+      "smile",
+      "emphasize",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s050-n01.mp3",
+    "duration_sec": 18.576
+  },
+  {
+    "slide_idx": 51,
+    "slide_id": "p1-1-8",
+    "text": "먼저 문제 상황을 정리합니다. 반감기 \\(\\tau\\)는 초기량이 절반이 되는 시간입니다. 모델은 1차 지수 감쇠 \\(Q'=-rQ\\) 입니다.",
+    "normalized_text": "먼저 문제 상황을 정리합니다. 반감기 \\\\tau\\는 초기량이 절반이 되는 시간입니다. 모델은 1차 지수 감쇠 \\Q 프라임 는 -rQ\\ 입니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s051-n01.mp3",
+    "duration_sec": 15.24
+  },
+  {
+    "slide_idx": 52,
+    "slide_id": "p1-2-8",
+    "text": "이제 미분방정식을 풉니다. 분리변수법으로 \\(\\dfrac{dQ}{Q}=-r\\,dt\\) 를 적분하면 \\(\\ln|Q|=-rt+C\\) 가 됩니다.",
+    "normalized_text": "이제 미분방정식을 풉니다. 분리변수법으로 \\\\dfracdQQ 는 -r dt\\ 를 적분하면 \\자연로그절댓값 Q 는 -rt 플러스 C\\ 가 됩니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s052-n01.mp3",
+    "duration_sec": 15.216
+  },
+  {
+    "slide_idx": 52,
+    "slide_id": "p1-2-8",
+    "text": "초기조건 \\(Q(0)=Q_0\\) 를 사용하면 상수 \\(C=\\ln Q_0\\) 이고, 최종적으로 \\(Q(t)=Q_0e^{-rt}\\) 이라는 해를 얻습니다.",
+    "normalized_text": "초기조건 \\Q0 는 Q0\\ 를 사용하면 상수 \\C 는 자연로그 Q0\\ 이고, 최종적으로 \\Qt 는 Q0e의 마이너스 rt\\ 이라는 해를 얻습니다.",
+    "gestures": [
+      "small-nod",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s052-n02.mp3",
+    "duration_sec": 16.944
+  },
+  {
+    "slide_idx": 53,
+    "slide_id": "p1-3-8",
+    "text": "반감기의 정의 \\(Q(\\tau)=\\tfrac{1}{2}Q_0\\) 를 일반해에 대입합니다. \\(Q_0\\) 는 0이 아니므로 약분 가능합니다.",
+    "normalized_text": "반감기의 정의 \\Q\\tau 는 \\tfrac12Q0\\ 를 일반해에 대입합니다. \\Q0\\ 는 0이 아니므로 약분 가능합니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s053-n01.mp3",
+    "duration_sec": 15.36
+  },
+  {
+    "slide_idx": 53,
+    "slide_id": "p1-3-8",
+    "text": "지수식 \\(e^{-r\\tau}=\\tfrac{1}{2}\\) 에 자연로그를 취하면 \\(-r\\tau=-\\ln2\\) 가 되어 결국 \\(r\\tau=\\ln2\\) 를 얻습니다.",
+    "normalized_text": "지수식 \\e의 마이너스 r\\tau 는 \\tfrac12\\ 에 자연로그를 취하면 \\-r\\tau 는 -자연로그2\\ 가 되어 결국 \\r\\tau 는 자연로그2\\ 를 얻습니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s053-n02.mp3",
+    "duration_sec": 19.776
+  },
+  {
+    "slide_idx": 54,
+    "slide_id": "p1-4-8",
+    "text": "구한 해를 원래 미분방정식에 대입하면 일치함을 확인할 수 있습니다. 또한 반감기 식을 다시 대입하여 정의와 일치하는지 검산합니다.",
+    "normalized_text": "구한 해를 원래 미분방정식에 대입하면 일치함을 확인할 수 있습니다. 또한 반감기 식을 다시 대입하여 정의와 일치하는지 검산합니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s054-n01.mp3",
+    "duration_sec": 11.184
+  },
+  {
+    "slide_idx": 54,
+    "slide_id": "p1-4-8",
+    "text": "특이한 경우로 \\(r=0\\) 이면 물질이 감소하지 않으므로 반감기는 무한대임을 따로 언급합니다.",
+    "normalized_text": "특이한 경우로 \\r 는 0\\ 이면 물질이 감소하지 않으므로 반감기는 무한대임을 따로 언급합니다.",
+    "gestures": [
+      "think",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s054-n02.mp3",
+    "duration_sec": 9.144
+  },
+  {
+    "slide_idx": 55,
+    "slide_id": "p1-5-8",
+    "text": "정리하면 반감기와 감쇠율의 곱은 자연로그 2 입니다. 식로는 \\(r\\tau=\\ln2\\) 이고, \\(\\tau=\\dfrac{\\ln2}{r}\\) 로 쓸 수 있습니다.",
+    "normalized_text": "정리하면 반감기와 감쇠율의 곱은 자연로그 2 입니다. 식로는 \\r\\tau 는 자연로그2\\ 이고, \\\\tau 는 \\dfrac자연로그2r\\ 로 쓸 수 있습니다.",
+    "gestures": [
+      "smile",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s055-n01.mp3",
+    "duration_sec": 17.544
+  },
+  {
+    "slide_idx": 56,
+    "slide_id": "p1-1-9",
+    "text": "먼저 문제를 읽어보겠습니다. 미분방정식과 초기조건이 주어져 있습니다.",
+    "normalized_text": "먼저 문제를 읽어보겠습니다. 미분방정식과 초기조건이 주어져 있습니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s056-n01.mp3",
+    "duration_sec": 6.768
+  },
+  {
+    "slide_idx": 56,
+    "slide_id": "p1-1-9",
+    "text": "목표는 두 부분입니다: 일반해를 구하고, 편차가 절반이 되는 시간을 구하는 것입니다.",
+    "normalized_text": "목표는 두 부분입니다: 일반해를 구하고, 편차가 절반이 되는 시간을 구하는 것입니다.",
+    "gestures": [
+      "emphasize",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s056-n02.mp3",
+    "duration_sec": 6.864
+  },
+  {
+    "slide_idx": 56,
+    "slide_id": "p1-1-9",
+    "text": "이제 편차 변수를 도입해서 풀어보겠습니다.",
+    "normalized_text": "이제 편차 변수를 도입해서 풀어보겠습니다.",
+    "gestures": [
+      "write",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s056-n03.mp3",
+    "duration_sec": 3.888
+  },
+  {
+    "slide_idx": 57,
+    "slide_id": "p1-2-9",
+    "text": "우선 편차 변수 \\(v(t)=u(t)-T\\) 를 도입하면 상수항이 사라집니다.",
+    "normalized_text": "우선 편차 변수 \\vt 는 ut-T\\ 를 도입하면 상수항이 사라집니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s057-n01.mp3",
+    "duration_sec": 7.728
+  },
+  {
+    "slide_idx": 57,
+    "slide_id": "p1-2-9",
+    "text": "미분방정식은 \\(\\dfrac{dv}{dt}=-kv\\) 가 되어 분리가능합니다. \\(\\dfrac{dv}{v}=-k\\,dt\\) 를 적분하면 \\(\\ln|v|=-kt+C\\) 가 됩니다.",
+    "normalized_text": "미분방정식은 \\\\dfracdvdt 는 -kv\\ 가 되어 분리가능합니다. \\\\dfracdvv 는 -k dt\\ 를 적분하면 \\자연로그절댓값 v 는 -kt 플러스 C\\ 가 됩니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s057-n02.mp3",
+    "duration_sec": 18.072
+  },
+  {
+    "slide_idx": 57,
+    "slide_id": "p1-2-9",
+    "text": "지수화하면 \\(v(t)=Ce^{-kt}\\). 초기조건 \\(v(0)=u_0-T\\) 이므로 \\(C=u_0-T\\) 를 대입합니다.",
+    "normalized_text": "지수화하면 \\vt 는 Ce의 마이너스 kt\\. 초기조건 \\v0 는 u0 마이너스 T\\ 이므로 \\C 는 u0 마이너스 T\\ 를 대입합니다.",
+    "gestures": [
+      "small-nod",
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s057-n03.mp3",
+    "duration_sec": 16.656
+  },
+  {
+    "slide_idx": 57,
+    "slide_id": "p1-2-9",
+    "text": "따라서 원래의 해는 \\(u(t)=T+(u_0-T)e^{-kt}\\) 입니다.",
+    "normalized_text": "따라서 원래의 해는 \\ut 는 T 플러스 u0 마이너스 Te의 마이너스 kt\\ 입니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s057-n04.mp3",
+    "duration_sec": 8.448
+  },
+  {
+    "slide_idx": 58,
+    "slide_id": "p1-3-9",
+    "text": "반감기 정의를 원해에 대입하면 간단한 지수식이 나옵니다.",
+    "normalized_text": "반감기 정의를 원해에 대입하면 간단한 지수식이 나옵니다.",
+    "gestures": [
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s058-n01.mp3",
+    "duration_sec": 4.944
+  },
+  {
+    "slide_idx": 58,
+    "slide_id": "p1-3-9",
+    "text": "양변을 나누어 \\(e^{-k\\tau}=1/2\\) 를 얻고 양변에 로그를 취하면 \\(k\\tau=\\ln 2\\) 가 됩니다.",
+    "normalized_text": "양변을 나누어 \\e의 마이너스 k\\tau 는 1 나누기 2\\ 를 얻고 양변에 로그를 취하면 \\k\\tau 는 자연로그 2\\ 가 됩니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s058-n02.mp3",
+    "duration_sec": 14.352
+  },
+  {
+    "slide_idx": 58,
+    "slide_id": "p1-3-9",
+    "text": "따라서 \\(\\tau=\\dfrac{\\ln 2}{k}\\) 입니다. 초기편차가 0이면(즉 \\(u_0=T\\)) 이 의미는 따로 생각해야 합니다.",
+    "normalized_text": "따라서 \\\\tau 는 \\dfrac자연로그 2k\\ 입니다. 초기편차가 0이면즉 \\u0 는 T\\ 이 의미는 따로 생각해야 합니다.",
+    "gestures": [
+      "think",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s058-n03.mp3",
+    "duration_sec": 14.88
+  },
+  {
+    "slide_idx": 59,
+    "slide_id": "p1-4-9",
+    "text": "마무리로 정답을 한 번 더 정리하겠습니다. 해는 지수적으로 주변온도에 접근합니다.",
+    "normalized_text": "마무리로 정답을 한 번 더 정리하겠습니다. 해는 지수적으로 주변온도에 접근합니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s059-n01.mp3",
+    "duration_sec": 7.464
+  },
+  {
+    "slide_idx": 59,
+    "slide_id": "p1-4-9",
+    "text": "반감기는 상수 \\(k\\) 에만 의존하며 \\(k\\tau=\\ln 2\\) 입니다. 문제 끝입니다.",
+    "normalized_text": "반감기는 상수 \\k\\ 에만 의존하며 \\k\\tau 는 자연로그 2\\ 입니다. 문제 끝입니다.",
+    "gestures": [
+      "small-nod",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s059-n02.mp3",
+    "duration_sec": 12.216
+  },
+  {
+    "slide_idx": 60,
+    "slide_id": "p1-1-10",
+    "text": "먼저 문제 상황과 주어진 미분방정식을 읽어보겠습니다. 이는 저항 R, 커패시터 용량 C, 상수 전압 V가 있는 RC 회로에서 축전기 전하 Q(t)에 대한 1차 선형 방정식입니다.",
+    "normalized_text": "먼저 문제 상황과 주어진 미분방정식을 읽어보겠습니다. 이는 저항 R, 커패시터 용량 C, 상수 전압 V가 있는 RC 회로에서 축전기 전하 Qt에 대한 1차 선형 방정식입니다.",
+    "gestures": [
+      "point",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s060-n01.mp3",
+    "duration_sec": 14.424
+  },
+  {
+    "slide_idx": 61,
+    "slide_id": "p1-2-10",
+    "text": "방정식을 표준형으로 바꾼 뒤, 우변이 상수이므로 상수 특해를 가정해 빠르게 Q_p=VC를 얻습니다. 동차해는 지수감소형 A e^{-t/(RC)}이고, 시간상수는 \\tau=RC입니다.",
+    "normalized_text": "방정식을 표준형으로 바꾼 뒤, 우변이 상수이므로 상수 특해를 가정해 빠르게 Qp 는 VC를 얻습니다. 동차해는 지수감소형 A e의 마이너스 t/RC이고, 시간상수는 \\tau 는 RC입니다.",
+    "gestures": [
+      "write",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s061-n01.mp3",
+    "duration_sec": 15.984
+  },
+  {
+    "slide_idx": 62,
+    "slide_id": "p1-3-10",
+    "text": "일반해로부터 초기조건을 대입하면 상수 A=-VC를 얻습니다. 그래서 a번 최종 해는 Q(t)=VC(1-e^{-t/(RC)})로 깔끔하게 나옵니다. 시간상수 표기를 사용하면 Q(t)=VC(1-e^{-t/\\tau})입니다.",
+    "normalized_text": "일반해로부터 초기조건을 대입하면 상수 A 는 -VC를 얻습니다. 그래서 a번 최종 해는 Qt 는 VC1 마이너스 e의 마이너스 t/RC로 깔끔하게 나옵니다. 시간상수 표기를 사용하면 Qt 는 VC1 마이너스 e의 마이너스 t/\\tau입니다.",
+    "gestures": [
+      "point",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s062-n01.mp3",
+    "duration_sec": 20.304
+  },
+  {
+    "slide_idx": 63,
+    "slide_id": "p1-4-10",
+    "text": "b번 한계값은 Q_L=VC입니다. c번은 배터리 제거로 동차해만 남아 Q(t)=Q_L e^{-(t-t_1)/(RC)}가 됩니다. 충전은 0에서 VC로, 방전은 VC에서 0으로 지수적으로 변합니다.",
+    "normalized_text": "b번 한계값은 QL 는 VC입니다. c번은 배터리 제거로 동차해만 남아 Qt 는 QL e의 마이너스 t 마이너스 t1/RC가 됩니다. 충전은 0에서 VC로, 방전은 VC에서 0으로 지수적으로 변합니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s063-n01.mp3",
+    "duration_sec": 17.208
+  },
+  {
+    "slide_idx": 64,
+    "slide_id": "p1-5-9",
+    "text": "마무리로 정답을 한 번에 정리했습니다. 중요한 점은 특해 VC와 시간상수 \\tau=RC, 그리고 초기조건으로 인한 지수항의 계수 결정입니다. 이상으로 문제 풀이를 마칩니다.",
+    "normalized_text": "마무리로 정답을 한 번에 정리했습니다. 중요한 점은 특해 VC와 시간상수 \\tau 는 RC, 그리고 초기조건으로 인한 지수항의 계수 결정입니다. 이상으로 문제 풀이를 마칩니다.",
+    "gestures": [
+      "small-nod",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s064-n01.mp3",
+    "duration_sec": 15.192
+  },
+  {
+    "slide_idx": 65,
+    "slide_id": "p1-1-11",
+    "text": "먼저 상황을 정리하겠습니다. 연못의 부피와 유입·유출 유량, 그리고 유입 농도를 적어두었습니다.",
+    "normalized_text": "먼저 상황을 정리하겠습니다. 연못의 부피와 유입·유출 유량, 그리고 유입 농도를 적어두었습니다.",
+    "gestures": [
+      "point",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s065-n01.mp3",
+    "duration_sec": 8.808
+  },
+  {
+    "slide_idx": 65,
+    "slide_id": "p1-1-11",
+    "text": "혼합이 균일하다고 가정하면 유출되는 물질은 전체 Q에 비례합니다. 그래서 유출률은 kQ이고 유입률은 상수 3 g/h 입니다.",
+    "normalized_text": "혼합이 균일하다고 가정하면 유출되는 물질은 전체 Q에 비례합니다. 그래서 유출률은 kQ이고 유입률은 상수 3 g 나누기 h 입니다.",
+    "gestures": [
+      "small-nod",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s065-n02.mp3",
+    "duration_sec": 11.712
+  },
+  {
+    "slide_idx": 65,
+    "slide_id": "p1-1-11",
+    "text": "초기조건 Q(0)=0 을 확인하고, 문제에서 요구하는 항목들을 순서대로 풀어가겠습니다.",
+    "normalized_text": "초기조건 Q0 는 0 을 확인하고, 문제에서 요구하는 항목들을 순서대로 풀어가겠습니다.",
+    "gestures": [
+      "smile",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s065-n03.mp3",
+    "duration_sec": 7.176
+  },
+  {
+    "slide_idx": 66,
+    "slide_id": "p1-2-11",
+    "text": "이제 미분방정식을 세웁니다. 유입은 상수 3, 유출은 0.0003 Q 이므로 dQ/dt = 3 - 0.0003 Q 입니다.",
+    "normalized_text": "이제 미분방정식을 세웁니다. 유입은 상수 3, 유출은 0.0003 Q 이므로 dQ 나누기 dt 는 3 - 0.0003 Q 입니다.",
+    "gestures": [
+      "write",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s066-n01.mp3",
+    "duration_sec": 12.144
+  },
+  {
+    "slide_idx": 66,
+    "slide_id": "p1-2-11",
+    "text": "선형 1차 상수계수 ODE이므로 정상상태를 이용해 해를 얻습니다. Q_{ss}=3/0.0003=10000 이고,\n해는 Q(t)=10000(1-e^{-0.0003 t}) 입니다.",
+    "normalized_text": "선형 1차 상수계수 ODE이므로 정상상태를 이용해 해를 얻습니다. Qss 는 3 나누기 0.0003 는 10000 이고,\n해는 Qt 는 100001 마이너스 e의 마이너스 0.0003 t 입니다.",
+    "gestures": [
+      "emphasize",
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s066-n02.mp3",
+    "duration_sec": 15.96
+  },
+  {
+    "slide_idx": 66,
+    "slide_id": "p1-2-11",
+    "text": "여기서 지수항의 계수 0.0003 은 시간 단위가 시간당(h^{-1})임을 주의하세요.",
+    "normalized_text": "여기서 지수항의 계수 0.0003 은 시간 단위가 시간당h의 마이너스 1승임을 주의하세요.",
+    "gestures": [
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s066-n03.mp3",
+    "duration_sec": 7.464
+  },
+  {
+    "slide_idx": 67,
+    "slide_id": "p1-3-11",
+    "text": "1년 뒤 값을 계산합니다. 지수 항의 지수는 -0.0003·8760 = -2.628 이고, 따라서 Q(8760)≈9275 g 입니다.",
+    "normalized_text": "1년 뒤 값을 계산합니다. 지수 항의 지수는 -0.0003·8760 는 -2.628 이고, 따라서 Q8760약9275 g 입니다.",
+    "gestures": [
+      "point",
+      "emphasize"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s067-n01.mp3",
+    "duration_sec": 14.664
+  },
+  {
+    "slide_idx": 67,
+    "slide_id": "p1-3-11",
+    "text": "그 시점에서 원천을 제거하면 유입률이 0이 됩니다. 그러면 단순한 감쇠식 dQ/dt = -0.0003 Q 가 됩니다.",
+    "normalized_text": "그 시점에서 원천을 제거하면 유입률이 0이 됩니다. 그러면 단순한 감쇠식 dQ 나누기 dt 는 -0.0003 Q 가 됩니다.",
+    "gestures": [
+      "small-nod",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s067-n02.mp3",
+    "duration_sec": 11.208
+  },
+  {
+    "slide_idx": 67,
+    "slide_id": "p1-3-11",
+    "text": "제거 후 해는 Q(t)=Q_1 e^{-0.0003 (t-8760)} 이고, 2년(17520 h)에서는 한 번 더 e^{-2.628}을 곱합니다.",
+    "normalized_text": "제거 후 해는 Qt 는 Q1 e의 마이너스 0.0003 t-8760 이고, 2년17520 h에서는 한 번 더 e의 마이너스 2.628을 곱합니다.",
+    "gestures": [
+      "emphasize",
+      "write"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s067-n03.mp3",
+    "duration_sec": 12.984
+  },
+  {
+    "slide_idx": 68,
+    "slide_id": "p1-4-11",
+    "text": "2년 시점에서 계산하면 약 672.3 g 이 나옵니다. 빠르게 확인해 보세요.",
+    "normalized_text": "2년 시점에서 계산하면 약 672.3 g 이 나옵니다. 빠르게 확인해 보세요.",
+    "gestures": [
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s068-n01.mp3",
+    "duration_sec": 7.656
+  },
+  {
+    "slide_idx": 68,
+    "slide_id": "p1-4-11",
+    "text": "Q=10 g 이 되는 시간을 제거 후 경과시간으로 풀면 \\tau = (1/0.0003)\\ln(Q_1/10) 입니다. 숫자 대입하면 약 22770 시간, 즉 약 2.60 년입니다.",
+    "normalized_text": "Q 는 10 g 이 되는 시간을 제거 후 경과시간으로 풀면 \\tau 는 1 나누기 0.0003자연로그Q1/10 입니다. 숫자 대입하면 약 22770 시간, 즉 약 2.60 년입니다.",
+    "gestures": [
+      "write",
+      "think"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s068-n02.mp3",
+    "duration_sec": 16.104
+  },
+  {
+    "slide_idx": 68,
+    "slide_id": "p1-4-11",
+    "text": "전체 경과시간은 제거 시점 1년을 더해서 약 3.60 년, 즉 약 31530 시간입니다.",
+    "normalized_text": "전체 경과시간은 제거 시점 1년을 더해서 약 3.60 년, 즉 약 31530 시간입니다.",
+    "gestures": [
+      "small-nod"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s068-n03.mp3",
+    "duration_sec": 8.016
+  },
+  {
+    "slide_idx": 68,
+    "slide_id": "p1-4-11",
+    "text": "3년 시점에서는 약 48.4 g 으로, 지수적으로 감소한 것을 확인할 수 있습니다.",
+    "normalized_text": "3년 시점에서는 약 48.4 g 으로, 지수적으로 감소한 것을 확인할 수 있습니다.",
+    "gestures": [
+      "emphasize",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s068-n04.mp3",
+    "duration_sec": 7.128
+  },
+  {
+    "slide_idx": 69,
+    "slide_id": "p1-5-10",
+    "text": "마지막으로 요약합니다. 초기 구간의 해와 제거 후의 해, 그리고 주요 수치들을 한 번에 정리했습니다.",
+    "normalized_text": "마지막으로 요약합니다. 초기 구간의 해와 제거 후의 해, 그리고 주요 수치들을 한 번에 정리했습니다.",
+    "gestures": [
+      "emphasize",
+      "point"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s069-n01.mp3",
+    "duration_sec": 8.568
+  },
+  {
+    "slide_idx": 69,
+    "slide_id": "p1-5-10",
+    "text": "박스 안에 두 식을 다시 확인하세요. 왼쪽이 원천이 계속 존재할 때, 오른쪽이 제거 이후의 해입니다.",
+    "normalized_text": "박스 안에 두 식을 다시 확인하세요. 왼쪽이 원천이 계속 존재할 때, 오른쪽이 제거 이후의 해입니다.",
+    "gestures": [
+      "small-nod",
+      "smile"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s069-n02.mp3",
+    "duration_sec": 8.688
+  },
+  {
+    "slide_idx": 69,
+    "slide_id": "p1-5-10",
+    "text": "그래프적으로는 1년까지는 급격히 증가하여 거의 정상치 10000 g 근처에 도달하고, 제거 후에는 지수적으로 감쇠하여 2년 약 672 g, 3년 약 48 g 로 내려갑니다.",
+    "normalized_text": "그래프적으로는 1년까지는 급격히 증가하여 거의 정상치 10000 g 근처에 도달하고, 제거 후에는 지수적으로 감쇠하여 2년 약 672 g, 3년 약 48 g 로 내려갑니다.",
+    "gestures": [
+      "point",
+      "pause"
+    ],
+    "speech_path": "out/speech/1.2/1_2-s069-n03.mp3",
+    "duration_sec": 13.896
+  }
+]
